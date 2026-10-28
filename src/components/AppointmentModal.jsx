@@ -215,7 +215,7 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
 
   return (
     <div 
-      className={`fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-xs transition-opacity duration-300 ${
+      className={`fixed inset-0 z-[60] flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-xs transition-opacity duration-300 ${
         isClosing ? 'opacity-0' : 'animate-backdrop-in'
       }`}
       onClick={(e) => {

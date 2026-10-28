@@ -9,9 +9,11 @@ import AppointmentForm from './components/AppointmentForm';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import MobileBottomBar from './components/MobileBottomBar';
+import { AppointmentModal } from './components/AppointmentModal';
 
 export function App() {
   const [selectedDoctor, setSelectedDoctor] = useState('');
+  const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
 
   const handleSelectDoctor = (doctorName) => {
     setSelectedDoctor(doctorName);
@@ -22,11 +24,8 @@ export function App() {
     }
   };
 
-  const handleScrollToAppointment = () => {
-    const appointmentEl = document.getElementById('appointment');
-    if (appointmentEl) {
-      appointmentEl.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleOpenAppointmentModal = () => {
+    setIsAppointmentModalOpen(true);
   };
 
   return (
@@ -63,8 +62,14 @@ export function App() {
       {/* 10. Footer */}
       <Footer />
 
-      {/* 11. Mobile Fixed Bottom Navigation Bar */}
-      <MobileBottomBar onSelectAppointment={handleScrollToAppointment} />
+      {/* 11. Mobile Fixed Bottom Navigation Bar (Directly opens modal) */}
+      <MobileBottomBar onSelectAppointment={handleOpenAppointmentModal} />
+
+      {/* Direct Mobile Appointment Modal Dialog */}
+      <AppointmentModal
+        isOpen={isAppointmentModalOpen}
+        onClose={() => setIsAppointmentModalOpen(false)}
+      />
     </div>
   );
 }
