@@ -1,10 +1,51 @@
-import React from 'react';
-import { Calendar, ArrowRight, ShieldCheck, Heart, Clock, UserCheck, Sparkles } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Calendar, ArrowRight, ShieldCheck, Heart, Clock, UserCheck, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 import { clinicData } from '../data/clinic';
 import ImagePlaceholder from './ImagePlaceholder';
 
 export const Hero = () => {
   const { hero } = clinicData;
+  const slides = hero.slides || [
+    {
+      id: "hospital",
+      image: hero.heroImage || "/hero-clinic.jpg",
+      alt: "Clinic Care",
+      badge: "Consultations Open",
+      captionTitle: "Patient-First Ethics",
+      captionSubtitle: "Evidence-based clinical care",
+      captionBadge: "Licensed",
+      objectPosition: "center",
+    },
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [touchStartX, setTouchStartX] = useState(null);
+
+  // Auto-play slideshow every 3.8 seconds
+  useEffect(() => {
+    if (isPaused || slides.length <= 1) return;
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 3800);
+    return () => clearInterval(timer);
+  }, [isPaused, slides.length]);
+
+  // Touch swipe support for mobile devices
+  const handleTouchStart = (e) => setTouchStartX(e.touches[0].clientX);
+  const handleTouchEnd = (e) => {
+    if (touchStartX === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+    if (diff > 40) {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    } else if (diff < -40) {
+      setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    }
+    setTouchStartX(null);
+  };
+
+  const activeSlide = slides[currentSlide] || slides[0];
 
   return (
     <section id="home" className="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-24 clinic-gradient-bg">
@@ -72,7 +113,7 @@ export const Hero = () => {
 
           </div>
 
-          {/* Right Hero Visual Showcase */}
+          {/* Right Hero Visual Showcase (With Smooth Sliding Carousel) */}
           <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
             
             {/* Background Shape Accent */}
@@ -80,45 +121,98 @@ export const Hero = () => {
 
             <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-lg xl:max-w-xl bg-white rounded-3xl p-5 sm:p-6 shadow-xl border border-emerald-100/80">
               
-              {/* Main Visual or Placeholder Container */}
-              <div className="relative overflow-hidden rounded-2xl bg-emerald-50/60 aspect-4/3 flex items-center justify-center">
-                {hero.heroImage ? (
-                  <img
-                    src={hero.heroImage}
-                    alt="Clinic Medical Care"
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <ImagePlaceholder
-                    src={null}
-                    alt="Clinic Care"
-                    label="[Clinic Hero Image]"
-                    type="hero"
-                    className="w-full h-full border-none shadow-none bg-transparent"
-                  />
+              {/* Main Visual Carousel Container - Dimensions Preserved Exactly (aspect-4/3) */}
+              <div 
+                className="relative overflow-hidden rounded-2xl bg-emerald-50/60 aspect-4/3 flex items-center justify-center group/slider select-none"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+              >
+                {/* Horizontal Sliding Track */}
+                <div 
+                  className="flex w-full h-full transition-transform duration-700 ease-in-out"
+                  style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                >
+                  {slides.map((slide, idx) => (
+                    <div key={idx} className="relative w-full h-full shrink-0">
+                      <img
+                        src={slide.image}
+                        alt={slide.alt}
+                        className="w-full h-full object-cover"
+                        style={{ objectPosition: slide.objectPosition || 'center' }}
+                        loading={idx === 0 ? 'eager' : 'lazy'}
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                {/* Floating Top Badge with Dynamic Title */}
+                <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm border border-emerald-100 flex items-center gap-1.5 text-xs font-semibold text-slate-800 transition-all duration-300 pointer-events-none z-10">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span>{activeSlide.badge || "Consultations Open"}</span>
+                </div>
+
+                {/* Left & Right Subtle Navigation Controls on Hover */}
+                {slides.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
+                      className="absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-xs flex items-center justify-center opacity-0 group-hover/slider:opacity-100 transition-all duration-200 cursor-pointer shadow-md focus:opacity-100 z-10"
+                      aria-label="Previous slide"
+                    >
+                      <ChevronLeft className="w-4 h-4" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
+                      className="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-xs flex items-center justify-center opacity-0 group-hover/slider:opacity-100 transition-all duration-200 cursor-pointer shadow-md focus:opacity-100 z-10"
+                      aria-label="Next slide"
+                    >
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
+                  </>
                 )}
 
-                {/* Floating Top Badge */}
-                <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm border border-emerald-100 flex items-center gap-1.5 text-xs font-semibold text-slate-800">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-                  <span>Consultations Open</span>
-                </div>
+                {/* Reference Style Indicator: Elongated Active Pill + Circular Inactive Dots */}
+                {slides.length > 1 && (
+                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/35 backdrop-blur-md z-10 shadow-sm">
+                    {slides.map((_, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => setCurrentSlide(idx)}
+                        className={`transition-all duration-300 rounded-full cursor-pointer ${
+                          currentSlide === idx
+                            ? 'w-7 h-2 bg-white shadow-xs'
+                            : 'w-2 h-2 bg-white/50 hover:bg-white/90'
+                        }`}
+                        aria-label={`Go to slide ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Floating Stat Card */}
-              <div className="mt-4 p-4 rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50/50 border border-emerald-100/70 flex items-center justify-between">
+              <div className="mt-4 p-4 rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50/50 border border-emerald-100/70 flex items-center justify-between transition-all duration-300">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#0f4c3a] text-emerald-300 flex items-center justify-center shadow-xs">
+                  <div className="w-10 h-10 rounded-xl bg-[#0f4c3a] text-emerald-300 flex items-center justify-center shadow-xs shrink-0">
                     <Heart className="w-5 h-5 fill-emerald-300/30" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-slate-800">Patient-First Ethics</p>
-                    <p className="text-[11px] text-slate-500">Evidence-based clinical care</p>
+                    <p className="text-xs font-bold text-slate-800 transition-all duration-300">
+                      {activeSlide.captionTitle || "Patient-First Ethics"}
+                    </p>
+                    <p className="text-[11px] text-slate-500 transition-all duration-300">
+                      {activeSlide.captionSubtitle || "Evidence-based clinical care"}
+                    </p>
                   </div>
                 </div>
-                <div className="flex items-center gap-1 text-emerald-800 text-xs font-semibold bg-white px-2.5 py-1 rounded-lg border border-emerald-100">
+                <div className="flex items-center gap-1 text-emerald-800 text-xs font-semibold bg-white px-2.5 py-1 rounded-lg border border-emerald-100 shrink-0">
                   <Sparkles className="w-3.5 h-3.5 text-emerald-500" />
-                  <span>Licensed</span>
+                  <span>{activeSlide.captionBadge || "Licensed"}</span>
                 </div>
               </div>
 
