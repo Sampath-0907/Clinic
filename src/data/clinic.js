@@ -289,7 +289,7 @@ export const clinicData = {
       bio: "Experienced Consultant Gynecologist and Obstetrician known for clinical expertise, refined laparoscopic surgical skills, compassionate bedside manner, and recipient of the Dr. APJ Abdul Kalam Award.",
       photo: "/Doctor 1.jpg",
       photoPosition: "center 22%",
-      availability: "Monday - Saturday: Inquire for OPD Timings",
+      availability: "Monday - Saturday: 9:00 AM - 9:00 PM",
       readTime: "5 min read",
       tags: ["Gynecology", "Obstetrics", "Laparoscopy", "Infertility"],
       fullArticle: {
@@ -344,7 +344,7 @@ export const clinicData = {
       bio: "Senior consultant psychiatrist, academician, and medical educator with 18 years of experience in Government and private healthcare, Consultant Psychiatrist, Editor of Telangana Journal of Psychiatry, and recipient of the Govt. Best Doctor Award.",
       photo: "/Doctor 2.jpg",
       photoPosition: "54% 12%",
-      availability: "Monday - Saturday: Inquire for OPD Timings",
+      availability: "Monday - Saturday: 9:00 AM - 9:00 PM",
       readTime: "6 min read",
       tags: ["Psychiatry", "Mental Health", "Medical Education", "Research"],
       fullArticle: {
@@ -477,8 +477,8 @@ export const clinicData = {
     disclaimerNotice:
       "Important Note: Submitting this form sends an appointment request to our clinic desk. Your appointment is finalized once our reception verifies the time slot with you via phone or message.",
     timeSlots: [
-      "Morning (9:30 AM - 2:00 PM)",
-      "Evening (5:00 PM - 8:30 PM)",
+      "Morning (9:00 AM - 2:00 PM)",
+      "Evening (5:00 PM - 9:00 PM)",
     ],
     endpointUrl: null,
   },
@@ -499,7 +499,7 @@ export const clinicData = {
     whatsapp: "8919009613",
     whatsappDisplay: "+91 98765 43210",
     operatingHours: [
-      { days: "Monday - Saturday", hours: "9:00 AM - 7:30 PM (Doctor Specific OPD)", isOpenDay: true },
+      { days: "Monday - Saturday", hours: "9:00 AM - 9:00 PM", isOpenDay: true },
       { days: "Sunday", hours: "Prior Appointment / Emergency Support", isOpenDay: false },
     ],
     emergencyNotice:

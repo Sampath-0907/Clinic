@@ -59,7 +59,7 @@ export const Navbar = () => {
             </span>
             <span className="inline-flex items-center gap-1.5 text-blue-100 font-medium">
               <Clock className="w-3.5 h-3.5 text-blue-300 shrink-0" />
-              <span>Mon - Sat: 9:00 AM - 7:30 PM</span>
+              <span>Mon - Sat: 9:00 AM - 9:00 PM</span>
             </span>
           </div>
 
@@ -186,7 +186,7 @@ export const Navbar = () => {
           <div className="mb-3 px-1 py-2 bg-blue-50/70 rounded-xl border border-blue-100 flex items-center justify-between text-xs text-blue-950 font-medium">
             <span className="inline-flex items-center gap-1.5">
               <Clock className="w-3.5 h-3.5 text-[#0145f2]" />
-              <span>9:00 AM - 7:30 PM</span>
+              <span>Mon - Sat: 9:00 AM - 9:00 PM</span>
             </span>
             <span className="inline-flex items-center gap-1">
               <MapPin className="w-3.5 h-3.5 text-[#0145f2]" />
