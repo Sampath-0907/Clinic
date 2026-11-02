@@ -2,7 +2,7 @@
  * ============================================================================
  * CLINIC CONFIGURATION FILE (src/data/clinic.js)
  * ============================================================================
- * Centralized content for Dr. Soujanya's Mother and Mind Clinic, Pragati Nagar, Hyderabad.
+ * Centralized content for Dr. Soujanya's Mother and Mind Care, Pragati Nagar, Hyderabad.
  * ============================================================================
  */
 
@@ -10,7 +10,7 @@ export const clinicData = {
   // --------------------------------------------------------------------------
   // General Clinic Identity
   // --------------------------------------------------------------------------
-  clinicName: "Dr. Soujanya's Mother and Mind Clinic",
+  clinicName: "Dr. Soujanya's Mother and Mind Care",
   tagline: "Maternal Mental Health | Counselling",
   location: "Pragati Nagar, Hyderabad",
 
@@ -36,7 +36,7 @@ export const clinicData = {
     badge: "Now Consulting in Pragati Nagar, Hyderabad",
     headline: "Compassionate Healthcare & Mindful Support for Mother & Child",
     subheadline:
-      "Welcome to Dr. Soujanya's Mother and Mind Clinic. We provide personalized, compassionate, and comprehensive clinical care for women, mothers, and children alongside dedicated mental health services and psychological counselling.",
+      "Welcome to Dr. Soujanya's Mother and Mind Care. We provide personalized, compassionate, and comprehensive clinical care for women, mothers, and children alongside dedicated mental health services and psychological counselling.",
     primaryCtaText: "Book an Appointment",
     secondaryCtaText: "Explore Our Services",
     heroImage: "/hero-clinic.jpg",
@@ -44,7 +44,7 @@ export const clinicData = {
       {
         id: "hospital",
         image: "/hero-clinic.jpg",
-        alt: "Dr. Soujanya's Mother and Mind Clinic consultation facility",
+        alt: "Dr. Soujanya's Mother and Mind Care consultation facility",
         badge: "Consultations Open",
         captionTitle: "Patient-First Ethics",
         captionSubtitle: "Evidence-based clinical care",
@@ -86,7 +86,7 @@ export const clinicData = {
     badge: "About Our Clinic",
     title: "Where Maternal Well-Being Meets Mindful Psychological Care",
     missionText:
-      "At Dr. Soujanya's Mother and Mind Clinic, Pragati Nagar, Hyderabad, our focus is on delivering comprehensive, personalized care across women's reproductive health, obstetrics, and evidence-guided psychiatric and psychological support.",
+      "At Dr. Soujanya's Mother and Mind Care, Pragati Nagar, Hyderabad, our focus is on delivering comprehensive, personalized care across women's reproductive health, obstetrics, and evidence-guided psychiatric and psychological support.",
     approachText:
       "We believe good healthcare extends beyond diagnosis and prescription—it involves listening patiently, explaining medical conditions clearly, respecting personal preferences, and partnering with patients through every step of their health journey.",
     keyHighlights: [
@@ -426,7 +426,7 @@ export const clinicData = {
     badge: "Patient Feedback",
     title: "Patient Experiences & Gratitude",
     subtitle:
-      "Heartfelt feedback from mothers, couples, and individuals who received care at Dr. Soujanya's Mother and Mind Clinic.",
+      "Heartfelt feedback from mothers, couples, and individuals who received care at Dr. Soujanya's Mother and Mind Care.",
     disclaimer:
       "Patient testimonials reflect individual treatment experiences and personalized clinical journeys.",
     items: [
@@ -483,7 +483,7 @@ export const clinicData = {
     title: "Contact & Clinic Location",
     subtitle:
       "Conveniently located in Pragati Nagar, Hyderabad, serving families across Pragati Nagar, Nizampet, Bachupally, and KPHB.",
-    address: "Dr. Soujanya’s Mother and Mind Clinic, Pragati Nagar, Hyderabad, Telangana",
+    address: "Dr. Soujanya’s Mother and Mind Care, Pragati Nagar, Hyderabad, Telangana",
     phone: "+91 98765 43210", // Clinic contact number
     phoneTel: "+919876543210",
     email: "contact@motherandmindclinic.com",
@@ -503,8 +503,8 @@ export const clinicData = {
   // --------------------------------------------------------------------------
   footer: {
     description:
-      "Dr. Soujanya’s Mother and Mind Clinic, Pragati Nagar, Hyderabad. Specialized care in Gynecology, Obstetrics, Laparoscopic Surgery, and Clinical Psychiatry & Counselling.",
-    copyright: "© {year} Dr. Soujanya's Mother and Mind Clinic. All rights reserved.",
+      "Dr. Soujanya’s Mother and Mind Care, Pragati Nagar, Hyderabad. Specialized care in Gynecology, Obstetrics, Laparoscopic Surgery, and Clinical Psychiatry & Counselling.",
+    copyright: "© {year} Dr. Soujanya's Mother and Mind Care. All rights reserved.",
     privacyLink: "#privacy",
     termsLink: "#terms",
     medicalDisclaimer:

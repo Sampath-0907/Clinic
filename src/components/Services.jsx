@@ -3,7 +3,7 @@ import { ArrowRight, Check, Sparkles, Stethoscope, Brain, HeartPulse, CheckCircl
 import { clinicData } from '../data/clinic';
 import DynamicIcon from './DynamicIcon';
 
-// Curated category badges matching Dr. Soujanya's Mother and Mind Clinic theme
+// Curated category badges matching Dr. Soujanya's Mother and Mind Care theme
 const categoryMap = {
   'antenatal-pregnancy': 'Maternal Care',
   'pcod-menstrual-health': 'Women\'s Wellness',

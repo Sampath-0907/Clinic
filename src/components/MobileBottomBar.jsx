@@ -61,7 +61,7 @@ export const MobileBottomBar = ({ onSelectAppointment }) => {
             onClick={handleLogoClick}
             className="w-15 h-15 rounded-full bg-white p-1.5 shadow-[0_6px_20px_rgba(15,76,58,0.22)] border-2 border-emerald-500/80 flex items-center justify-center active:scale-95 transition-all cursor-pointer group"
             aria-label="Clinic home"
-            title="Dr. Soujanya's Mother and Mind Clinic"
+            title="Dr. Soujanya's Mother and Mind Care"
           >
             {clinicData.logoUrl ? (
               <img
