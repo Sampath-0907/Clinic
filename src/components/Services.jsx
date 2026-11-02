@@ -34,7 +34,7 @@ export const Services = () => {
   return (
     <section id="services" className="py-20 clinic-gradient-bg overflow-hidden">
       <div className="clinic-container">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 text-[#0145f2] text-xs font-semibold uppercase tracking-wider mb-4 border border-blue-200 shadow-2xs">
@@ -45,7 +45,7 @@ export const Services = () => {
             Integrated Mother & Mind Care
           </h2>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-            Personalized, ethical, and compassionate outpatient clinical services spanning women's health, obstetrics, and senior psychiatric care.
+            Personalized, ethical, and compassionate outpatient clinical services spanning women's health, obstetrics, and psychiatric care.
           </p>
 
           {/* Department Quick Filter Tabs */}
@@ -53,22 +53,20 @@ export const Services = () => {
             <button
               type="button"
               onClick={() => setActiveFilter('all')}
-              className={`px-4.5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                activeFilter === 'all'
-                  ? 'bg-[#0145f2] text-white shadow-md shadow-blue-600/20'
-                  : 'bg-white text-slate-600 hover:text-slate-900 hover:bg-blue-50 border border-slate-200/80'
-              }`}
+              className={`px-4.5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeFilter === 'all'
+                ? 'bg-[#0145f2] text-white shadow-md shadow-blue-600/20'
+                : 'bg-white text-slate-600 hover:text-slate-900 hover:bg-blue-50 border border-slate-200/80'
+                }`}
             >
               All Services ({services.length})
             </button>
             <button
               type="button"
               onClick={() => setActiveFilter('gynaecology')}
-              className={`inline-flex items-center gap-1.5 px-4.5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                activeFilter === 'gynaecology'
-                  ? 'bg-rose-700 text-white shadow-md'
-                  : 'bg-white text-rose-800 hover:bg-rose-50 border border-rose-200/80'
-              }`}
+              className={`inline-flex items-center gap-1.5 px-4.5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeFilter === 'gynaecology'
+                ? 'bg-rose-700 text-white shadow-md'
+                : 'bg-white text-rose-800 hover:bg-rose-50 border border-rose-200/80'
+                }`}
             >
               <HeartPulse className="w-3.5 h-3.5" />
               <span>Gynaecology & Obstetrics (Dr. Soujanya)</span>
@@ -76,11 +74,10 @@ export const Services = () => {
             <button
               type="button"
               onClick={() => setActiveFilter('psychiatry')}
-              className={`inline-flex items-center gap-1.5 px-4.5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                activeFilter === 'psychiatry'
-                  ? 'bg-[#0145f2] text-white shadow-md shadow-blue-600/20'
-                  : 'bg-white text-[#0145f2] hover:bg-blue-50 border border-blue-200/80'
-              }`}
+              className={`inline-flex items-center gap-1.5 px-4.5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeFilter === 'psychiatry'
+                ? 'bg-[#0145f2] text-white shadow-md shadow-blue-600/20'
+                : 'bg-white text-[#0145f2] hover:bg-blue-50 border border-blue-200/80'
+                }`}
             >
               <Brain className="w-3.5 h-3.5" />
               <span>Psychiatry & Mind Care (Dr. Vivaswan)</span>
@@ -92,9 +89,9 @@ export const Services = () => {
             INFINITE MARQUEE CAROUSEL WITH SMOOTH MOVING TRACK
            ========================================================================= */}
         <div className="group-marquee relative mb-16 sm:mb-20">
-          
+
           {/* Framed Container */}
-          <div 
+          <div
             className="relative rounded-3xl bg-white/80 border border-blue-100/90 shadow-sm backdrop-blur-xs p-4 sm:p-6 overflow-hidden"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
@@ -109,9 +106,8 @@ export const Services = () => {
               className="overflow-hidden w-full"
             >
               <div
-                className={`flex gap-6 py-3 px-3 ${
-                  isPaused ? 'animate-marquee pause-animation' : 'animate-marquee'
-                }`}
+                className={`flex gap-6 py-3 px-3 ${isPaused ? 'animate-marquee pause-animation' : 'animate-marquee'
+                  }`}
               >
                 {infiniteServices.map((service, index) => {
                   const categoryTag = categoryMap[service.id] || service.departmentLabel || 'Clinical Specialty';
@@ -125,18 +121,16 @@ export const Services = () => {
                       <div>
                         {/* Top Row: Category Pill & Icon */}
                         <div className="flex items-center justify-between mb-4">
-                          <span className={`inline-block px-3 py-1 rounded-full text-[11px] font-bold tracking-wide border ${
-                            isGynae 
-                              ? 'bg-rose-50 text-rose-800 border-rose-100'
-                              : 'bg-blue-50 text-[#0145f2] border-blue-100'
-                          }`}>
+                          <span className={`inline-block px-3 py-1 rounded-full text-[11px] font-bold tracking-wide border ${isGynae
+                            ? 'bg-rose-50 text-rose-800 border-rose-100'
+                            : 'bg-blue-50 text-[#0145f2] border-blue-100'
+                            }`}>
                             {categoryTag}
                           </span>
-                          <div className={`w-11 h-11 rounded-xl flex items-center justify-center transition-colors duration-300 shadow-2xs ${
-                            isGynae
-                              ? 'bg-rose-50 text-rose-700 group-hover:bg-rose-700 group-hover:text-white'
-                              : 'bg-blue-50 text-[#0145f2] group-hover:bg-[#0145f2] group-hover:text-white'
-                          }`}>
+                          <div className={`w-11 h-11 rounded-xl flex items-center justify-center transition-colors duration-300 shadow-2xs ${isGynae
+                            ? 'bg-rose-50 text-rose-700 group-hover:bg-rose-700 group-hover:text-white'
+                            : 'bg-blue-50 text-[#0145f2] group-hover:bg-[#0145f2] group-hover:text-white'
+                            }`}>
                             <DynamicIcon name={service.iconName} className="w-5 h-5" />
                           </div>
                         </div>
@@ -193,7 +187,7 @@ export const Services = () => {
 
             {/* 2-Column Clinical Pamphlet Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-              
+
               {/* Column 1: Gynaecology Services (Dr. Soujanya Banka) */}
               <div className="bg-white rounded-3xl p-6 sm:p-8 border-2 border-rose-100 shadow-sm relative overflow-hidden flex flex-col justify-between">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-rose-50/70 rounded-full blur-2xl pointer-events-none -mr-10 -mt-10" />
@@ -236,7 +230,6 @@ export const Services = () => {
 
                 <div className="pt-3 border-t border-rose-100/80">
                   <span className="text-xs font-medium text-rose-800/80">
-                    16 comprehensive gynaecological procedures & consultations
                   </span>
                 </div>
               </div>
@@ -283,7 +276,6 @@ export const Services = () => {
 
                 <div className="pt-3 border-t border-blue-100/80">
                   <span className="text-xs font-medium text-[#0145f2]">
-                    23 specialized psychiatric & mental wellness conditions
                   </span>
                 </div>
               </div>

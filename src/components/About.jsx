@@ -9,15 +9,15 @@ export const About = () => {
   return (
     <section id="about" className="py-20 bg-white border-y border-slate-200/70">
       <div className="clinic-container">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
+
           {/* Left Column: Image / Showcase */}
           <div className="lg:col-span-5 order-2 lg:order-1 relative">
             <div className="relative">
               {/* Background Accent Frame */}
               <div className="absolute -inset-4 bg-gradient-to-tr from-blue-100/70 to-slate-100 rounded-3xl -z-10 transform -rotate-1" />
-              
+
               <div className="bg-white p-3 rounded-2xl shadow-lg border border-blue-100">
                 {about.aboutImage ? (
                   <img
@@ -47,7 +47,6 @@ export const About = () => {
                     {about.experienceYearsBadge}
                   </p>
                   <p className="text-sm font-bold text-white">
-                    Patient-First Standards
                   </p>
                 </div>
               </div>
@@ -56,7 +55,7 @@ export const About = () => {
 
           {/* Right Column: Mission, Approach & Highlights */}
           <div className="lg:col-span-7 order-1 lg:order-2 flex flex-col items-start">
-            
+
             {/* Section Tag */}
             <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#0145f2] text-xs font-semibold uppercase tracking-wider mb-4">
               {about.badge}

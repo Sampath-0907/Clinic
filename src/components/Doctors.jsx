@@ -19,7 +19,7 @@ export const Doctors = ({ onSelectDoctor }) => {
   return (
     <section id="doctors" className="py-20 bg-white border-y border-slate-200/70">
       <div className="clinic-container">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-blue-50 text-[#0145f2] text-xs font-semibold uppercase tracking-wider mb-4 border border-blue-200">
@@ -29,7 +29,7 @@ export const Doctors = ({ onSelectDoctor }) => {
             Meet Our Doctors
           </h2>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-            Specialized clinical care and dedicated psychological guidance tailored for maternal mental health, parent-infant wellness, and emotional balance.
+            Specialized clinical care and dedicated guidance tailored for woman and all the other mental health issues.
           </p>
         </div>
 
@@ -172,7 +172,7 @@ export const Doctors = ({ onSelectDoctor }) => {
 
             {/* Scrollable Blog Body */}
             <div className="overflow-y-auto p-6 sm:p-10 space-y-6">
-              
+
               {/* Blog Top Header: Title, Doctor Details & Meta */}
               <div className="border-b border-slate-200 pb-6">
                 <div className="flex flex-wrap items-center gap-2 mb-3">
