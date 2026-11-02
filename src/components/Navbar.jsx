@@ -48,14 +48,10 @@ export const Navbar = () => {
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full transition-all duration-300">
-      {/* Top Utility Announcement & Contact Bar (Hides cleanly on scroll) */}
-      <div 
-        className={`bg-linear-to-r from-[#061234] via-[#091E5A] to-[#0145f2] text-white text-xs transition-all duration-300 overflow-hidden ${
-          scrolled ? 'max-h-0 py-0 opacity-0' : 'max-h-12 py-2 opacity-100 border-b border-blue-950/50'
-        }`}
-      >
-        <div className="clinic-container flex items-center justify-between gap-4">
+    <>
+      {/* Top Utility Announcement & Contact Bar (Scrolls naturally with page, eliminating scroll jitter) */}
+      <div className="w-full bg-linear-to-r from-[#061234] via-[#091E5A] to-[#0145f2] text-white text-xs border-b border-blue-950/50">
+        <div className="clinic-container flex items-center justify-between gap-4 py-2">
           <div className="flex items-center gap-6">
             <span className="hidden sm:inline-flex items-center gap-1.5 text-blue-100 font-normal">
               <MapPin className="w-3.5 h-3.5 text-blue-300 shrink-0" />
@@ -85,15 +81,15 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {/* Main Glassmorphic Navigation Bar */}
-      <div 
-        className={`w-full transition-all duration-300 ${
+      {/* Main Glassmorphic Navigation Bar (Sticky top-0 with fixed height for flicker-free scrolling) */}
+      <header 
+        className={`sticky top-0 z-50 w-full transition-shadow duration-200 ${
           scrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200/80 py-2.5'
-            : 'bg-white/90 backdrop-blur-sm border-b border-slate-200/50 py-3.5'
+            ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200/80'
+            : 'bg-white/90 backdrop-blur-sm border-b border-slate-200/50'
         }`}
       >
-        <div className="clinic-container">
+        <div className="clinic-container py-3">
           <div className="flex items-center justify-between gap-4">
             
             {/* Brand Logo & Clinic Info */}
@@ -183,7 +179,6 @@ export const Navbar = () => {
 
           </div>
         </div>
-      </div>
 
       {/* Advanced Mobile Drawer Menu */}
       {mobileMenuOpen && (
@@ -255,6 +250,7 @@ export const Navbar = () => {
         onClose={() => setAppointmentModalOpen(false)} 
       />
     </header>
+  </>
   );
 };
 
