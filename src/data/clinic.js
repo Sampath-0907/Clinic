@@ -289,7 +289,7 @@ export const clinicData = {
       bio: "Experienced Consultant Gynecologist and Obstetrician known for clinical expertise, refined laparoscopic surgical skills, compassionate bedside manner, and recipient of the Dr. APJ Abdul Kalam Award.",
       photo: "/Doctor 1.jpg",
       photoPosition: "center 22%",
-      availability: "Monday - Saturday: 9:00 AM - 9:00 PM",
+      availability: "Monday - Saturday: Inquire for OPD Timings",
       readTime: "5 min read",
       tags: ["Gynecology", "Obstetrics", "Laparoscopy", "Infertility"],
       fullArticle: {
@@ -344,7 +344,7 @@ export const clinicData = {
       bio: "Senior consultant psychiatrist, academician, and medical educator with 18 years of experience in Government and private healthcare, Consultant Psychiatrist, Editor of Telangana Journal of Psychiatry, and recipient of the Govt. Best Doctor Award.",
       photo: "/Doctor 2.jpg",
       photoPosition: "54% 12%",
-      availability: "Monday - Saturday: 9:00 AM - 9:00 PM",
+      availability: "Monday - Saturday: Inquire for OPD Timings",
       readTime: "6 min read",
       tags: ["Psychiatry", "Mental Health", "Medical Education", "Research"],
       fullArticle: {
