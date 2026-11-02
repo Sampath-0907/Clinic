@@ -11,7 +11,7 @@ export const clinicData = {
   // General Clinic Identity
   // --------------------------------------------------------------------------
   clinicName: "Dr. Soujanya's Mother and Mind Care",
-  tagline: "Maternal Mental Health | Counselling",
+  tagline: "Woman Well-being| Mental Health| Therapies",
   location: "Pragati Nagar, Hyderabad",
 
   // Official Clinic Logo
@@ -36,7 +36,7 @@ export const clinicData = {
     badge: "Now Consulting in Pragati Nagar, Hyderabad",
     headline: "Compassionate Healthcare & Mindful Support for Mother & Child",
     subheadline:
-      "Welcome to Dr. Soujanya's Mother and Mind Care. We provide personalized, compassionate, and comprehensive clinical care for women, mothers, and children alongside dedicated mental health services and psychological counselling.",
+      "Welcome to Dr. Soujanya's Mother and Mind Care. We provide personalized, compassionate, and comprehensive clinical care for women, mothers, and children alongside dedicated mental health services and psychological counselling and therapies.",
     primaryCtaText: "Book an Appointment",
     secondaryCtaText: "Explore Our Services",
     heroImage: "/hero-clinic.jpg",
@@ -64,17 +64,17 @@ export const clinicData = {
       {
         id: "dr-vivaswan",
         image: "/Doctor 2.jpg",
-        alt: "Dr. Vivaswan Boorla - Senior Consultant Psychiatrist & Professor",
+        alt: "Dr. Vivaswan Boorla - Senior Consultant Psychiatrist",
         badge: "Dr. Vivaswan Boorla",
         captionTitle: "Dr. Vivaswan Boorla",
-        captionSubtitle: "Professor & HOD of Psychiatry • 18+ Yrs Exp.",
+        captionSubtitle: "Consultant Psychiatrist • 18+ Yrs Exp.",
         captionBadge: "Psychiatrist",
         objectPosition: "54% 12%",
       },
     ],
     highlights: [
-      { label: "Gold Medalist Gynecologist", detail: "Obstetrics & Laparoscopy Specialist" },
-      { label: "Professor of Psychiatry", detail: "18+ Yrs Govt Healthcare Leadership" },
+      { label: "Compassionate Gynecologist", detail: "Obstetrics & Laparoscopy Specialist" },
+      { label: "Consultant Psychiatrist", detail: "18+ Yrs Govt Healthcare Leadership" },
       { label: "Holistic Mother & Mind Care", detail: "Personalized, Dignified Attention" },
     ],
   },
@@ -91,7 +91,7 @@ export const clinicData = {
       "We believe good healthcare extends beyond diagnosis and prescription—it involves listening patiently, explaining medical conditions clearly, respecting personal preferences, and partnering with patients through every step of their health journey.",
     keyHighlights: [
       "Integrated women's health, obstetrics, fertility, and mental health under one roof",
-      "Led by experienced specialists: Award-winning Gynecologist & Senior Professor of Psychiatry",
+      "Led by experienced specialists: Award-winning Gynecologist & Senior Consultant Psychiatrist",
       "Compassionate, unhurried consultations with calm and reassuring communication",
       "Advanced laparoscopic surgical expertise and evidence-based clinical protocols",
     ],
@@ -215,7 +215,7 @@ export const clinicData = {
     psychiatry: {
       category: "Psychiatry Services",
       doctorName: "Dr. Vivaswan Boorla",
-      doctorTitle: "Professor & HOD of Psychiatry | Senior Consultant Psychiatrist",
+      doctorTitle: "Consultant Psychiatrist",
       items: [
         "Emotional Problems",
         "Fearfulness",
@@ -329,9 +329,9 @@ export const clinicData = {
     {
       id: "dr-vivaswan-boorla",
       name: "Dr. Vivaswan Boorla",
-      role: "Professor & Head of Department | Consultant Psychiatrist",
+      role: "Consultant Psychiatrist",
       qualifications: "MBBS, MD (Psychiatry, Osmania Medical College)",
-      bio: "Senior psychiatrist, academician, and medical educator with 18 years in Government healthcare, Professor & HOD of Psychiatry at GMC Suryapet, Editor of Telangana Journal of Psychiatry, and recipient of the Govt. Best Doctor Award.",
+      bio: "Senior psychiatrist, academician, and medical educator with 18 years in Government healthcare, Consultant Psychiatrist, Editor of Telangana Journal of Psychiatry, and recipient of the Govt. Best Doctor Award.",
       photo: "/Doctor 2.jpg",
       photoPosition: "54% 12%",
       availability: "Consultant Psychiatrist: Pragati Nagar, Hyderabad",
@@ -344,14 +344,13 @@ export const clinicData = {
           {
             title: "Professional Profile & Leadership",
             content:
-              "Dr. Boorla serves as Professor and Head of the Department of Psychiatry at Government Medical College, Suryapet, Telangana. He completed his MD in Psychiatry at the prestigious Osmania Medical College and has extensive experience spanning clinical psychiatry, undergraduate and postgraduate medical teaching, research guidance, and community mental health initiatives. He previously served for 12 years at the Institute of Mental Health, Erragadda, Hyderabad."
+              "Dr. Boorla serves as Consultant Psychiatrist. He completed his MD in Psychiatry at the prestigious Osmania Medical College and has extensive experience spanning clinical psychiatry, undergraduate and postgraduate medical teaching, research guidance, and community mental health initiatives. He previously served for 12 years at the Institute of Mental Health, Erragadda, Hyderabad."
           },
           {
             title: "Academic Roles, Editorial & Research",
             content:
               "Dr. Boorla is the Editor of the Telangana Journal of Psychiatry, having previously served as a peer reviewer. With over 10 publications in medical and psychiatric journals, he actively participates as a guest lecturer, speaker, and chairperson at national and South Zone conferences. He provides mentorship for postgraduate psychiatric dissertations and interdisciplinary research.",
             bullets: [
-              "Professor & HOD, Psychiatry — Government Medical College, Suryapet, Telangana (2025–Present)",
               "Consultant Psychiatrist — Pragati Nagar, Hyderabad",
               "Editor — Telangana Journal of Psychiatry (Scholarly manuscript evaluation & publishing)",
               "Recipient of the Best Doctor Award from the Government of Telangana"
@@ -390,7 +389,7 @@ export const clinicData = {
       iconName: "Award",
       title: "Recognized Clinical Leadership",
       description:
-        "Led by an Award-Winning Gynecologist (Kalam Awardee) and a Senior Professor of Psychiatry (Govt. Best Doctor Awardee).",
+        "Led by an Award-Winning Gynecologist (Kalam Awardee) and a Senior Consultant Psychiatrist (Govt. Best Doctor Awardee).",
     },
     {
       iconName: "ShieldCheck",
