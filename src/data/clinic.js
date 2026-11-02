@@ -15,7 +15,7 @@ export const clinicData = {
   location: "Pragati Nagar, Hyderabad",
 
   // Official Clinic Logo
-  logoUrl: "/clinic-logo.jpg",
+  logoUrl: "/Clinic Logo 2.png",
 
   // --------------------------------------------------------------------------
   // 1. Navigation Links

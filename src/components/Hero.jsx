@@ -65,10 +65,17 @@ export const Hero = () => {
               <span>{hero.badge}</span>
             </div>
 
-            {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-slate-900 tracking-tight leading-[1.15] mb-6 max-w-4xl">
-              {hero.headline}
-            </h1>
+            {/* Official Clinic Logo (Replacing previous text headline) */}
+            <div className="mb-6 max-w-2xl w-full">
+              <img
+                src={clinicData.logoUrl || "/Clinic Logo 2.png"}
+                alt={clinicData.clinicName}
+                className="w-auto max-w-full h-auto max-h-28 sm:max-h-36 md:max-h-44 lg:max-h-52 object-contain object-left drop-shadow-xs"
+              />
+              <h1 className="sr-only">
+                {clinicData.clinicName}
+              </h1>
+            </div>
 
             {/* Subheadline / Welcome Text */}
             <p className="text-base sm:text-lg md:text-xl text-slate-600 mb-8 max-w-3xl leading-relaxed">
