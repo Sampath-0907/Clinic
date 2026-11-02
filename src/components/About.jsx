@@ -7,7 +7,7 @@ export const About = () => {
   const { about } = clinicData;
 
   return (
-    <section id="about" className="py-20 bg-white border-y border-emerald-100/60">
+    <section id="about" className="py-20 bg-white border-y border-slate-200/70">
       <div className="clinic-container">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -16,9 +16,9 @@ export const About = () => {
           <div className="lg:col-span-5 order-2 lg:order-1 relative">
             <div className="relative">
               {/* Background Accent Frame */}
-              <div className="absolute -inset-4 bg-gradient-to-tr from-emerald-100/70 to-teal-50 rounded-3xl -z-10 transform -rotate-1" />
+              <div className="absolute -inset-4 bg-gradient-to-tr from-blue-100/70 to-slate-100 rounded-3xl -z-10 transform -rotate-1" />
               
-              <div className="bg-white p-3 rounded-2xl shadow-lg border border-emerald-100">
+              <div className="bg-white p-3 rounded-2xl shadow-lg border border-blue-100">
                 {about.aboutImage ? (
                   <img
                     src={about.aboutImage}
@@ -38,12 +38,12 @@ export const About = () => {
               </div>
 
               {/* Floating Badge */}
-              <div className="absolute -bottom-5 -right-3 sm:right-4 bg-[#0f4c3a] text-white p-4 rounded-2xl shadow-xl flex items-center gap-3.5 border border-emerald-600/40">
-                <div className="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center shrink-0">
-                  <Stethoscope className="w-6 h-6" />
+              <div className="absolute -bottom-5 -right-3 sm:right-4 bg-[#061234] text-white p-4 rounded-2xl shadow-xl flex items-center gap-3.5 border border-[#0145f2]/40">
+                <div className="w-12 h-12 rounded-xl bg-[#0145f2]/20 text-[#0145f2] flex items-center justify-center shrink-0">
+                  <Stethoscope className="w-6 h-6 text-blue-300" />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-emerald-200 uppercase tracking-wider">
+                  <p className="text-xs font-semibold text-blue-200 uppercase tracking-wider">
                     {about.experienceYearsBadge}
                   </p>
                   <p className="text-sm font-bold text-white">
@@ -58,7 +58,7 @@ export const About = () => {
           <div className="lg:col-span-7 order-1 lg:order-2 flex flex-col items-start">
             
             {/* Section Tag */}
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-4">
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#0145f2] text-xs font-semibold uppercase tracking-wider mb-4">
               {about.badge}
             </span>
 
@@ -80,8 +80,8 @@ export const About = () => {
             {/* Key Highlights List */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full mb-8">
               {about.keyHighlights.map((highlight, idx) => (
-                <div key={idx} className="flex items-start gap-3 p-3 rounded-xl bg-emerald-50/50 border border-emerald-100/60">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                <div key={idx} className="flex items-start gap-3 p-3 rounded-xl bg-slate-50/80 border border-slate-200/70">
+                  <CheckCircle2 className="w-5 h-5 text-[#0145f2] shrink-0 mt-0.5" />
                   <span className="text-xs sm:text-sm font-medium text-slate-800">
                     {highlight}
                   </span>
@@ -92,9 +92,9 @@ export const About = () => {
             {/* Action Anchor */}
             <a
               href="#doctors"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white bg-[#0f4c3a] hover:bg-[#093629] shadow-sm transition-all duration-200 active:scale-95 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-emerald-600"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white bg-[#0145f2] hover:bg-[#0031b8] shadow-md shadow-blue-600/20 transition-all duration-200 active:scale-95 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#0145f2]"
             >
-              <Users className="w-4 h-4 text-emerald-300" />
+              <Users className="w-4 h-4 text-blue-200" />
               <span>Meet Our Medical Practitioners</span>
             </a>
 

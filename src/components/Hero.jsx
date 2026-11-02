@@ -49,9 +49,9 @@ export const Hero = () => {
 
   return (
     <section id="home" className="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-24 clinic-gradient-bg">
-      {/* Decorative Soft Green Background Blurs */}
-      <div className="absolute top-0 right-1/4 -z-10 w-96 h-96 bg-emerald-200/40 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-10 -z-10 w-80 h-80 bg-teal-100/50 rounded-full blur-3xl pointer-events-none" />
+      {/* Decorative Soft Blue & Cloud Background Blurs */}
+      <div className="absolute top-0 right-1/4 -z-10 w-96 h-96 bg-blue-400/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 left-10 -z-10 w-80 h-80 bg-[#0145f2]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="clinic-container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 xl:gap-16 items-center">
@@ -60,8 +60,8 @@ export const Hero = () => {
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             
             {/* Top Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100/80 border border-emerald-200/80 text-emerald-900 text-xs sm:text-sm font-semibold mb-6 shadow-2xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50/90 border border-blue-200/80 text-[#0145f2] text-xs sm:text-sm font-semibold mb-6 shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-[#0145f2] animate-pulse" />
               <span>{hero.badge}</span>
             </div>
 
@@ -79,26 +79,26 @@ export const Hero = () => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-10">
               <a
                 href="#appointment"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-[#0f4c3a] to-[#145d47] hover:from-[#0a382a] hover:to-[#0f4d3a] shadow-lg shadow-emerald-950/15 hover:shadow-xl transition-all duration-200 active:scale-95 group focus:outline-hidden focus-visible:ring-2 focus-visible:ring-emerald-600"
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-[#0145f2] to-[#1e60ff] hover:from-[#0031b8] hover:to-[#0145f2] shadow-lg shadow-blue-600/25 hover:shadow-xl transition-all duration-200 active:scale-95 group focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#0145f2]"
               >
-                <Calendar className="w-5 h-5 text-emerald-300 group-hover:scale-110 transition-transform" />
+                <Calendar className="w-5 h-5 text-blue-200 group-hover:scale-110 transition-transform" />
                 <span>{hero.primaryCtaText}</span>
-                <ArrowRight className="w-4 h-4 text-emerald-300 ml-1 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-blue-200 ml-1 group-hover:translate-x-1 transition-transform" />
               </a>
 
               <a
                 href="#services"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-base font-semibold text-[#0f4c3a] bg-white hover:bg-emerald-50/80 border border-emerald-200/80 shadow-xs hover:shadow-md transition-all duration-200 active:scale-95 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-emerald-600"
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-base font-semibold text-[#0145f2] bg-white hover:bg-blue-50/80 border border-blue-200/80 shadow-xs hover:shadow-md transition-all duration-200 active:scale-95 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#0145f2]"
               >
                 <span>{hero.secondaryCtaText}</span>
               </a>
             </div>
 
             {/* Trust Highlights Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full pt-6 border-t border-emerald-100">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full pt-6 border-t border-slate-200/80">
               {hero.highlights.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3 p-2.5 rounded-xl bg-white/60 backdrop-blur-xs border border-emerald-50">
-                  <div className="p-2 rounded-lg bg-emerald-100/70 text-emerald-800 shrink-0">
+                <div key={idx} className="flex items-start gap-3 p-2.5 rounded-xl bg-white/80 backdrop-blur-xs border border-slate-200/70 shadow-2xs">
+                  <div className="p-2 rounded-lg bg-blue-50 text-[#0145f2] shrink-0">
                     {idx === 0 && <UserCheck className="w-4 h-4" />}
                     {idx === 1 && <Clock className="w-4 h-4" />}
                     {idx === 2 && <ShieldCheck className="w-4 h-4" />}
@@ -117,13 +117,13 @@ export const Hero = () => {
           <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
             
             {/* Background Shape Accent */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-emerald-600/10 to-teal-500/20 rounded-3xl transform rotate-1 scale-105 -z-10" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#0145f2]/15 to-blue-400/20 rounded-3xl transform rotate-1 scale-105 -z-10" />
 
-            <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-lg xl:max-w-xl bg-white rounded-3xl p-5 sm:p-6 shadow-xl border border-emerald-100/80">
+            <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-lg xl:max-w-xl bg-white rounded-3xl p-5 sm:p-6 shadow-xl border border-blue-100">
               
               {/* Main Visual Carousel Container - Dimensions Preserved Exactly (aspect-4/3) */}
               <div 
-                className="relative overflow-hidden rounded-2xl bg-emerald-50/60 aspect-4/3 flex items-center justify-center group/slider select-none"
+                className="relative overflow-hidden rounded-2xl bg-slate-100/80 aspect-4/3 flex items-center justify-center group/slider select-none"
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}
                 onTouchStart={handleTouchStart}
@@ -148,8 +148,8 @@ export const Hero = () => {
                 </div>
 
                 {/* Floating Top Badge with Dynamic Title */}
-                <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm border border-emerald-100 flex items-center gap-1.5 text-xs font-semibold text-slate-800 transition-all duration-300 pointer-events-none z-10">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm border border-blue-100 flex items-center gap-1.5 text-xs font-semibold text-slate-800 transition-all duration-300 pointer-events-none z-10">
+                  <span className="w-2 h-2 rounded-full bg-[#0145f2] animate-pulse" />
                   <span>{activeSlide.badge || "Consultations Open"}</span>
                 </div>
 
@@ -196,10 +196,10 @@ export const Hero = () => {
               </div>
 
               {/* Floating Stat Card */}
-              <div className="mt-4 p-4 rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50/50 border border-emerald-100/70 flex items-center justify-between transition-all duration-300">
+              <div className="mt-4 p-4 rounded-xl bg-gradient-to-r from-blue-50/80 to-slate-50 border border-blue-100 flex items-center justify-between transition-all duration-300">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#0f4c3a] text-emerald-300 flex items-center justify-center shadow-xs shrink-0">
-                    <Heart className="w-5 h-5 fill-emerald-300/30" />
+                  <div className="w-10 h-10 rounded-xl bg-[#0145f2] text-white flex items-center justify-center shadow-xs shrink-0">
+                    <Heart className="w-5 h-5 fill-white/30" />
                   </div>
                   <div>
                     <p className="text-xs font-bold text-slate-800 transition-all duration-300">
@@ -210,8 +210,8 @@ export const Hero = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center gap-1 text-emerald-800 text-xs font-semibold bg-white px-2.5 py-1 rounded-lg border border-emerald-100 shrink-0">
-                  <Sparkles className="w-3.5 h-3.5 text-emerald-500" />
+                <div className="flex items-center gap-1 text-[#0145f2] text-xs font-semibold bg-white px-2.5 py-1 rounded-lg border border-blue-100 shrink-0">
+                  <Sparkles className="w-3.5 h-3.5 text-[#0145f2]" />
                   <span>{activeSlide.captionBadge || "Licensed"}</span>
                 </div>
               </div>

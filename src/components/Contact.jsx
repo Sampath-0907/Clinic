@@ -6,12 +6,12 @@ export const Contact = () => {
   const { contact } = clinicData;
 
   return (
-    <section id="contact" className="py-20 bg-white border-y border-emerald-100/60">
+    <section id="contact" className="py-20 bg-white border-y border-slate-200/70">
       <div className="clinic-container">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-4 border border-emerald-200">
+          <span className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-blue-50 text-[#0145f2] text-xs font-semibold uppercase tracking-wider mb-4 border border-blue-200">
             {contact.badge}
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-4">
@@ -29,9 +29,9 @@ export const Contact = () => {
           <div className="lg:col-span-5 space-y-6">
             
             {/* Address Card */}
-            <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100 hover:border-emerald-200 transition-colors">
+            <div className="p-6 rounded-2xl bg-slate-50/70 border border-slate-200/80 hover:border-blue-200 transition-colors">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#0f4c3a] text-emerald-300 flex items-center justify-center shrink-0 shadow-2xs">
+                <div className="w-12 h-12 rounded-xl bg-[#0145f2] text-white flex items-center justify-center shrink-0 shadow-2xs">
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
@@ -43,7 +43,7 @@ export const Contact = () => {
                     href={contact.googleMapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 hover:text-emerald-900 hover:underline"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0145f2] hover:text-[#0031b8] hover:underline"
                   >
                     <span>View on Google Maps</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -53,9 +53,9 @@ export const Contact = () => {
             </div>
 
             {/* Telephone Card */}
-            <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100 hover:border-emerald-200 transition-colors">
+            <div className="p-6 rounded-2xl bg-slate-50/70 border border-slate-200/80 hover:border-blue-200 transition-colors">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#0f4c3a] text-emerald-300 flex items-center justify-center shrink-0 shadow-2xs">
+                <div className="w-12 h-12 rounded-xl bg-[#0145f2] text-white flex items-center justify-center shrink-0 shadow-2xs">
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
@@ -63,7 +63,7 @@ export const Contact = () => {
                   <p className="text-xs text-slate-500 mb-1">For appointment inquiries & reception desk:</p>
                   <a
                     href={`tel:${contact.phoneTel || contact.phone}`}
-                    className="text-base font-bold text-[#0f4c3a] hover:text-emerald-600 transition-colors"
+                    className="text-base font-bold text-[#0145f2] hover:text-[#0031b8] transition-colors"
                   >
                     {contact.phone}
                   </a>
@@ -72,9 +72,9 @@ export const Contact = () => {
             </div>
 
             {/* Email Card */}
-            <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100 hover:border-emerald-200 transition-colors">
+            <div className="p-6 rounded-2xl bg-slate-50/70 border border-slate-200/80 hover:border-blue-200 transition-colors">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#0f4c3a] text-emerald-300 flex items-center justify-center shrink-0 shadow-2xs">
+                <div className="w-12 h-12 rounded-xl bg-[#0145f2] text-white flex items-center justify-center shrink-0 shadow-2xs">
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
@@ -82,7 +82,7 @@ export const Contact = () => {
                   <p className="text-xs text-slate-500 mb-1">For non-urgent queries and documentation:</p>
                   <a
                     href={`mailto:${contact.email}`}
-                    className="text-sm font-semibold text-[#0f4c3a] hover:text-emerald-600 transition-colors"
+                    className="text-sm font-semibold text-[#0145f2] hover:text-[#0031b8] transition-colors"
                   >
                     {contact.email}
                   </a>
@@ -109,9 +109,9 @@ export const Contact = () => {
           <div className="lg:col-span-7 space-y-6">
             
             {/* Operating Hours Card */}
-            <div className="p-7 rounded-3xl bg-white border border-emerald-100 shadow-md">
+            <div className="p-7 rounded-3xl bg-white border border-blue-100 shadow-md">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-blue-100 text-[#0145f2] flex items-center justify-center">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
@@ -120,12 +120,12 @@ export const Contact = () => {
                 </div>
               </div>
 
-              <div className="divide-y divide-emerald-50">
+              <div className="divide-y divide-slate-100">
                 {contact.operatingHours.map((schedule, idx) => (
                   <div key={idx} className="py-3.5 flex items-center justify-between text-sm">
                     <span className="font-semibold text-slate-800">{schedule.days}</span>
                     <div className="flex items-center gap-2">
-                      <span className={`w-2 h-2 rounded-full ${schedule.isOpenDay ? 'bg-emerald-500' : 'bg-slate-300'}`} />
+                      <span className={`w-2 h-2 rounded-full ${schedule.isOpenDay ? 'bg-[#0145f2]' : 'bg-slate-300'}`} />
                       <span className="text-slate-600 font-medium">{schedule.hours}</span>
                     </div>
                   </div>
@@ -142,10 +142,10 @@ export const Contact = () => {
             </div>
 
             {/* Google Maps Visual Box */}
-            <div className="rounded-3xl overflow-hidden border border-emerald-100 p-6 bg-gradient-to-br from-emerald-50/40 to-white flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
+            <div className="rounded-3xl overflow-hidden border border-blue-100 p-6 bg-gradient-to-br from-blue-50/40 to-white flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-[#0f4c3a] text-white flex items-center justify-center shrink-0">
-                  <Building className="w-6 h-6 text-emerald-300" />
+                <div className="w-12 h-12 rounded-xl bg-[#0145f2] text-white flex items-center justify-center shrink-0">
+                  <Building className="w-6 h-6 text-blue-200" />
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-slate-900">Need Driving Directions?</h4>
@@ -157,7 +157,7 @@ export const Contact = () => {
                 href={contact.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold text-[#0f4c3a] bg-white hover:bg-emerald-50 border border-emerald-200 shadow-2xs transition-all active:scale-95"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold text-[#0145f2] bg-white hover:bg-blue-50 border border-blue-200 shadow-2xs transition-all active:scale-95"
               >
                 <span>Open Google Maps</span>
                 <ExternalLink className="w-3.5 h-3.5" />

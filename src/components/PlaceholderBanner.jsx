@@ -8,19 +8,19 @@ export const PlaceholderBanner = () => {
   if (dismissed) return null;
 
   return (
-    <aside aria-label="Template configuration banner" className="bg-[#0a382a] text-white border-b border-emerald-700/60 transition-all">
+    <aside aria-label="Template configuration banner" className="bg-[#061234] text-white border-b border-blue-900/60 transition-all">
       <div className="clinic-container py-2.5">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs">
           
           <div className="flex items-center gap-2">
-            <span className="p-1 rounded-md bg-emerald-500/20 text-emerald-300">
-              <Settings className="w-3.5 h-3.5 animate-spin-slow" />
+            <span className="p-1 rounded-md bg-[#0145f2]/20 text-blue-300">
+              <Settings className="w-3.5 h-3.5 animate-spin-slow text-[#0145f2]" />
             </span>
-            <span className="font-semibold text-emerald-200">
+            <span className="font-semibold text-blue-200">
               Quick Setup Guide:
             </span>
             <span className="text-slate-200">
-              All clinic text & photos are configured in <code className="bg-emerald-950 px-1.5 py-0.5 rounded text-emerald-300 font-mono text-[11px]">src/data/clinic.js</code>
+              All clinic text & photos are configured in <code className="bg-[#0b1b4f] px-1.5 py-0.5 rounded text-blue-200 font-mono text-[11px] border border-blue-800/50">src/data/clinic.js</code>
             </span>
           </div>
 
@@ -28,7 +28,7 @@ export const PlaceholderBanner = () => {
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-emerald-800/80 hover:bg-emerald-700 text-white font-medium transition-colors text-[11px]"
+              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-[#0145f2] hover:bg-[#1e60ff] text-white font-medium transition-colors text-[11px] shadow-sm"
             >
               <span>{isOpen ? 'Hide Checklist' : 'Checklist of Placeholders'}</span>
               {isOpen ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
@@ -37,7 +37,7 @@ export const PlaceholderBanner = () => {
             <button
               type="button"
               onClick={() => setDismissed(true)}
-              className="p-1 rounded-md text-emerald-300 hover:text-white hover:bg-emerald-800/60 transition-colors"
+              className="p-1 rounded-md text-blue-200 hover:text-white hover:bg-blue-900/50 transition-colors"
               aria-label="Dismiss banner"
             >
               <X className="w-3.5 h-3.5" />
@@ -48,10 +48,10 @@ export const PlaceholderBanner = () => {
 
         {/* Collapsible Placeholder Checklist */}
         {isOpen && (
-          <div className="mt-3 pt-3 border-t border-emerald-800/80 text-[11px] text-slate-200 grid grid-cols-1 md:grid-cols-3 gap-3 animate-fadeIn">
-            <div className="bg-emerald-950/60 p-2.5 rounded-lg border border-emerald-800/60">
-              <p className="font-bold text-emerald-300 mb-1 flex items-center gap-1">
-                <CheckSquare className="w-3 h-3" /> Identity & Contact
+          <div className="mt-3 pt-3 border-t border-blue-900/60 text-[11px] text-slate-200 grid grid-cols-1 md:grid-cols-3 gap-3 animate-fadeIn">
+            <div className="bg-[#0b1b4f]/70 p-2.5 rounded-lg border border-blue-800/40">
+              <p className="font-bold text-blue-300 mb-1 flex items-center gap-1">
+                <CheckSquare className="w-3 h-3 text-[#0145f2]" /> Identity & Contact
               </p>
               <ul className="space-y-0.5 text-slate-300">
                 <li>• <code>clinicName</code> & <code>logoUrl</code></li>
@@ -61,9 +61,9 @@ export const PlaceholderBanner = () => {
               </ul>
             </div>
 
-            <div className="bg-emerald-950/60 p-2.5 rounded-lg border border-emerald-800/60">
-              <p className="font-bold text-emerald-300 mb-1 flex items-center gap-1">
-                <CheckSquare className="w-3 h-3" /> Team & Facility Photos
+            <div className="bg-[#0b1b4f]/70 p-2.5 rounded-lg border border-blue-800/40">
+              <p className="font-bold text-blue-300 mb-1 flex items-center gap-1">
+                <CheckSquare className="w-3 h-3 text-[#0145f2]" /> Team & Facility Photos
               </p>
               <ul className="space-y-0.5 text-slate-300">
                 <li>• <code>hero.heroImage</code></li>
@@ -73,11 +73,18 @@ export const PlaceholderBanner = () => {
               </ul>
             </div>
 
-            <div className="bg-emerald-950/60 p-2.5 rounded-lg border border-emerald-800/60">
-              <p className="font-bold text-emerald-300 mb-1 flex items-center gap-1">
-                <CheckSquare className="w-3 h-3" /> Reviews & Booking
+            <div className="bg-[#0b1b4f]/70 p-2.5 rounded-lg border border-blue-800/40">
+              <p className="font-bold text-blue-300 mb-1 flex items-center gap-1">
+                <CheckSquare className="w-3 h-3 text-[#0145f2]" /> Reviews & Booking
               </p>
               <ul className="space-y-0.5 text-slate-300">
+                <li>• <code>testimonials.items</code> or toggle <code>showSection</code></li>
+                <li>• <code>appointment.endpointUrl</code> (for live API)</li>
+                <li>• <code>services[]</code> list of treatments</li>
+              </ul>
+            </div>
+          </div>
+        )}
                 <li>• <code>testimonials.items</code> or toggle <code>showSection</code></li>
                 <li>• <code>appointment.endpointUrl</code> (for live API)</li>
                 <li>• <code>services[]</code> list of treatments</li>

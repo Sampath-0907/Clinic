@@ -2,14 +2,14 @@
 
 @layer base {
   :root {
-    --color-primary: #0f4c3a;
-    --color-primary-dark: #0a3327;
-    --color-primary-light: #16654e;
-    --color-accent: #10b981;
-    --color-accent-light: #34d399;
-    --color-accent-dark: #059669;
-    --color-bg-light: #f8faf8;
-    --color-bg-subtle: #f0fdf4;
+    --color-primary: #0145f2;
+    --color-primary-dark: #0031b8;
+    --color-primary-light: #2d68ff;
+    --color-accent: #0145f2;
+    --color-accent-light: #60a5fa;
+    --color-accent-dark: #002b9e;
+    --color-bg-light: #edf1f5;
+    --color-bg-subtle: #f0f4f8;
   }
 
   html {
@@ -23,7 +23,7 @@
 
   /* Custom focus states for WCAG accessibility */
   *:focus-visible {
-    outline: 2px solid #10b981;
+    outline: 2px solid #0145f2;
     outline-offset: 2px;
   }
 
@@ -38,7 +38,7 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f3;
+  background: #edf1f5;
 }
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
@@ -48,11 +48,11 @@
   background: #94a3b8;
 }
 
-/* Soft glowing green gradients & shapes */
+/* Soft glowing electric blue & canvas cloud gradients */
 .clinic-gradient-bg {
-  background: radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
-              radial-gradient(circle at 85% 85%, rgba(15, 76, 58, 0.06) 0%, transparent 50%),
-              #f8faf8;
+  background: radial-gradient(circle at 15% 15%, rgba(1, 69, 242, 0.08) 0%, transparent 45%),
+              radial-gradient(circle at 85% 85%, rgba(1, 69, 242, 0.04) 0%, transparent 50%),
+              #edf1f5;
 }
 
 .clinic-glass {

@@ -223,7 +223,7 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
       }}
     >
       <div 
-        className={`w-full max-w-md max-h-[88vh] bg-white rounded-2xl sm:rounded-3xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 ease-out border border-emerald-100 ${
+        className={`w-full max-w-md max-h-[88vh] bg-white rounded-2xl sm:rounded-3xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 ease-out border border-blue-100 ${
           isClosing ? 'scale-95 opacity-0' : 'animate-modal-center'
         }`}
         role="dialog"
@@ -231,16 +231,16 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
         aria-labelledby="modal-title"
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-4 sm:px-5 py-3 border-b border-slate-100 bg-linear-to-r from-emerald-50/70 to-white">
+        <div className="flex items-center justify-between px-4 sm:px-5 py-3 border-b border-slate-100 bg-linear-to-r from-blue-50/70 to-white">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-[#0f4c3a] text-white flex items-center justify-center shadow-xs">
-              <Calendar className="w-4 h-4 text-emerald-300" />
+            <div className="w-8 h-8 rounded-lg bg-[#0145f2] text-white flex items-center justify-center shadow-xs">
+              <Calendar className="w-4 h-4 text-blue-200" />
             </div>
             <div>
               <h3 id="modal-title" className="text-sm sm:text-base font-bold text-slate-900 leading-tight">
                 Book an Appointment
               </h3>
-              <p className="text-[10px] sm:text-[11px] text-emerald-800 font-medium">
+              <p className="text-[10px] sm:text-[11px] text-blue-900 font-medium">
                 Quick Consultation Request
               </p>
             </div>
@@ -259,13 +259,13 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
         <div className="p-4 sm:p-5 overflow-y-auto flex-1 space-y-3 text-xs">
           {requestSubmitted && submissionData ? (
             <div className="text-center py-4 animate-fadeIn">
-              <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-3">
+              <div className="w-12 h-12 rounded-full bg-blue-100 text-[#0145f2] flex items-center justify-center mx-auto mb-3">
                 <CheckCircle2 className="w-6 h-6" />
               </div>
               <h4 className="text-lg font-bold text-slate-900 mb-1.5">Request Received!</h4>
               <p className="text-xs text-slate-600 mb-4 leading-relaxed">
-                Thank you, <strong className="text-emerald-950">{submissionData.name}</strong>. Your consultation request for{' '}
-                <strong className="text-emerald-950">{formatDate(submissionData.date)}</strong> ({submissionData.timeSlot}) has been logged.
+                Thank you, <strong className="text-blue-950">{submissionData.name}</strong>. Your consultation request for{' '}
+                <strong className="text-blue-950">{formatDate(submissionData.date)}</strong> ({submissionData.timeSlot}) has been logged.
               </p>
 
               {/* Direct WhatsApp Action Button */}
@@ -286,9 +286,9 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
                 </div>
               )}
 
-              <div className="bg-emerald-50 rounded-xl p-3 text-left text-[11px] text-slate-700 space-y-1 mb-4 border border-emerald-100">
-                <p className="font-semibold text-emerald-950 flex items-center gap-1">
-                  <Clock className="w-3 h-3 text-emerald-700" />
+              <div className="bg-blue-50 rounded-xl p-3 text-left text-[11px] text-slate-700 space-y-1 mb-4 border border-blue-100">
+                <p className="font-semibold text-blue-950 flex items-center gap-1">
+                  <Clock className="w-3 h-3 text-[#0145f2]" />
                   What happens next:
                 </p>
                 <p>• Our front desk will verify doctor availability.</p>
@@ -297,15 +297,15 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
               <button
                 type="button"
                 onClick={handleSmoothClose}
-                className="w-full py-2.5 rounded-xl font-semibold text-xs text-white bg-[#0f4c3a] hover:bg-[#0a382a] transition-colors cursor-pointer"
+                className="w-full py-2.5 rounded-xl font-semibold text-xs text-white bg-[#0145f2] hover:bg-[#0031b8] transition-colors cursor-pointer shadow-sm shadow-blue-600/20"
               >
                 Done
               </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} noValidate className="space-y-3">
-              <div className="p-2.5 rounded-xl bg-emerald-50/80 border border-emerald-200/60 text-[11px] text-slate-700 flex items-start gap-1.5">
-                <AlertCircle className="w-3.5 h-3.5 text-emerald-700 shrink-0 mt-0.5" />
+              <div className="p-2.5 rounded-xl bg-blue-50/80 border border-blue-200/60 text-[11px] text-slate-700 flex items-start gap-1.5">
+                <AlertCircle className="w-3.5 h-3.5 text-[#0145f2] shrink-0 mt-0.5" />
                 <p>Our desk will call or message you to verify and finalize your requested slot.</p>
               </div>
 
@@ -330,7 +330,7 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Enter patient full name"
-                    className="w-full pl-8.5 pr-3 py-2 rounded-lg border border-slate-200 text-xs focus:border-emerald-500 focus:outline-hidden"
+                    className="w-full pl-8.5 pr-3 py-2 rounded-lg border border-slate-200 text-xs focus:border-[#0145f2] focus:outline-hidden"
                   />
                 </div>
                 {errors.name && <p className="text-[11px] text-red-600 mt-0.5">{errors.name}</p>}
@@ -352,7 +352,7 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+91..."
-                      className="w-full pl-8.5 pr-3 py-2 rounded-lg border border-slate-200 text-xs focus:border-emerald-500 focus:outline-hidden"
+                      className="w-full pl-8.5 pr-3 py-2 rounded-lg border border-slate-200 text-xs focus:border-[#0145f2] focus:outline-hidden"
                     />
                   </div>
                   {errors.phone && <p className="text-[11px] text-red-600 mt-0.5">{errors.phone}</p>}
@@ -372,7 +372,7 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="patient@email.com"
-                      className="w-full pl-8.5 pr-3 py-2 rounded-lg border border-slate-200 text-xs focus:border-emerald-500 focus:outline-hidden"
+                      className="w-full pl-8.5 pr-3 py-2 rounded-lg border border-slate-200 text-xs focus:border-[#0145f2] focus:outline-hidden"
                     />
                   </div>
                   {errors.email && <p className="text-[11px] text-red-600 mt-0.5">{errors.email}</p>}
@@ -388,7 +388,7 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
                   name="doctor"
                   value={formData.doctor}
                   onChange={handleChange}
-                  className="w-full px-2.5 py-2 rounded-lg border border-slate-200 text-xs bg-white focus:border-emerald-500 focus:outline-hidden"
+                  className="w-full px-2.5 py-2 rounded-lg border border-slate-200 text-xs bg-white focus:border-[#0145f2] focus:outline-hidden"
                 >
                   <option value="">Any Available Specialist</option>
                   {doctors?.map((doc) => (
@@ -411,7 +411,7 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
                     min={todayString}
                     value={formData.date}
                     onChange={handleChange}
-                    className="w-full px-2.5 py-2 rounded-lg border border-slate-200 text-xs focus:border-emerald-500 focus:outline-hidden"
+                    className="w-full px-2.5 py-2 rounded-lg border border-slate-200 text-xs focus:border-[#0145f2] focus:outline-hidden"
                   />
                   {errors.date && <p className="text-[11px] text-red-600 mt-0.5">{errors.date}</p>}
                 </div>
@@ -424,7 +424,7 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
                     name="timeSlot"
                     value={formData.timeSlot}
                     onChange={handleChange}
-                    className="w-full px-2.5 py-2 rounded-lg border border-slate-200 text-xs bg-white focus:border-emerald-500 focus:outline-hidden"
+                    className="w-full px-2.5 py-2 rounded-lg border border-slate-200 text-xs bg-white focus:border-[#0145f2] focus:outline-hidden"
                   >
                     {appointment.timeSlots.map((slot, idx) => (
                       <option key={idx} value={slot}>
@@ -446,7 +446,7 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
                   value={formData.reason}
                   onChange={handleChange}
                   placeholder="Briefly describe your symptoms or visit reason..."
-                  className="w-full p-2.5 rounded-lg border border-slate-200 text-xs focus:border-emerald-500 focus:outline-hidden resize-none"
+                  className="w-full p-2.5 rounded-lg border border-slate-200 text-xs focus:border-[#0145f2] focus:outline-hidden resize-none"
                 />
                 {errors.reason && <p className="text-[11px] text-red-600 mt-0.5">{errors.reason}</p>}
               </div>
@@ -456,7 +456,7 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold text-white bg-linear-to-r from-[#0f4c3a] to-[#145d47] hover:from-[#0a382a] hover:to-[#0f4d3a] shadow-sm hover:shadow transition-all active:scale-98 disabled:opacity-70"
+                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold text-white bg-linear-to-r from-[#0145f2] to-[#1e60ff] hover:from-[#0031b8] hover:to-[#0145f2] shadow-sm hover:shadow transition-all active:scale-98 disabled:opacity-70"
                 >
                   {isSubmitting ? (
                     <>
@@ -465,7 +465,7 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
                     </>
                   ) : (
                     <>
-                      <Calendar className="w-3.5 h-3.5 text-emerald-300" />
+                      <Calendar className="w-3.5 h-3.5 text-blue-200" />
                       <span>Submit Appointment Request</span>
                     </>
                   )}

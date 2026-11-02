@@ -29,7 +29,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f8faf8] text-slate-800">
+    <div className="min-h-screen flex flex-col bg-[#edf1f5] text-slate-800">
       {/* 1. Navbar: Sticky */}
       <Navbar />
 

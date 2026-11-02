@@ -39,17 +39,17 @@ export const MobileBottomBar = ({ onSelectAppointment }) => {
         <button
           type="button"
           onClick={handleAppointmentClick}
-          className="flex-1 flex flex-col items-center justify-center gap-1 py-1 text-slate-700 hover:text-[#0f4c3a] active:scale-90 transition-all cursor-pointer group"
+          className="flex-1 flex flex-col items-center justify-center gap-1 py-1 text-slate-700 hover:text-[#0145f2] active:scale-90 transition-all cursor-pointer group"
           aria-label="Book an appointment"
         >
-          <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-100/80 p-0.5 flex items-center justify-center shadow-sm border border-emerald-200/60 group-hover:scale-105 group-hover:shadow-md transition-all overflow-hidden">
+          <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-100/80 p-0.5 flex items-center justify-center shadow-sm border border-blue-200/70 group-hover:scale-105 group-hover:shadow-md transition-all overflow-hidden">
             <img
               src="/doctor-toy.jpg"
               alt="Doctor Appointment"
               className="w-full h-full object-cover rounded-[14px]"
             />
           </div>
-          <span className="text-[11px] font-bold tracking-tight text-slate-700 group-hover:text-[#0f4c3a]">
+          <span className="text-[11px] font-bold tracking-tight text-slate-700 group-hover:text-[#0145f2]">
             Appointment
           </span>
         </button>
@@ -59,7 +59,7 @@ export const MobileBottomBar = ({ onSelectAppointment }) => {
           <button
             type="button"
             onClick={handleLogoClick}
-            className="w-15 h-15 rounded-full bg-white p-1.5 shadow-[0_6px_20px_rgba(15,76,58,0.22)] border-2 border-emerald-500/80 flex items-center justify-center active:scale-95 transition-all cursor-pointer group"
+            className="w-15 h-15 rounded-full bg-white p-1.5 shadow-[0_6px_20px_rgba(1,69,242,0.25)] border-2 border-[#0145f2] flex items-center justify-center active:scale-95 transition-all cursor-pointer group"
             aria-label="Clinic home"
             title="Dr. Soujanya's Mother and Mind Care"
           >
@@ -70,12 +70,12 @@ export const MobileBottomBar = ({ onSelectAppointment }) => {
                 className="w-full h-full object-contain rounded-full group-hover:scale-105 transition-transform"
               />
             ) : (
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-[#0f4c3a] to-[#165e49] flex items-center justify-center text-white font-bold text-xs">
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-[#061234] to-[#0145f2] flex items-center justify-center text-white font-bold text-xs">
                 MMC
               </div>
             )}
           </button>
-          <span className="text-[10px] font-bold text-emerald-900 mt-0.5 tracking-tight">
+          <span className="text-[10px] font-bold text-[#061234] mt-0.5 tracking-tight">
             Home
           </span>
         </div>
@@ -84,17 +84,17 @@ export const MobileBottomBar = ({ onSelectAppointment }) => {
         <button
           type="button"
           onClick={handleContactClick}
-          className="flex-1 flex flex-col items-center justify-center gap-1 py-1 text-slate-700 hover:text-[#0f4c3a] active:scale-90 transition-all cursor-pointer group"
+          className="flex-1 flex flex-col items-center justify-center gap-1 py-1 text-slate-700 hover:text-[#0145f2] active:scale-90 transition-all cursor-pointer group"
           aria-label="Contact clinic"
         >
-          <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-100/80 p-0.5 flex items-center justify-center shadow-sm border border-emerald-200/60 group-hover:scale-105 group-hover:shadow-md transition-all overflow-hidden">
+          <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-100/80 p-0.5 flex items-center justify-center shadow-sm border border-blue-200/70 group-hover:scale-105 group-hover:shadow-md transition-all overflow-hidden">
             <img
               src="/contact-toy.jpg"
               alt="Contact Support"
               className="w-full h-full object-cover rounded-[14px]"
             />
           </div>
-          <span className="text-[11px] font-bold tracking-tight text-slate-700 group-hover:text-[#0f4c3a]">
+          <span className="text-[11px] font-bold tracking-tight text-slate-700 group-hover:text-[#0145f2]">
             Contact
           </span>
         </button>

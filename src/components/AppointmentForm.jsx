@@ -214,7 +214,7 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
 
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-900 text-xs font-semibold uppercase tracking-wider mb-4 border border-emerald-200">
+          <span className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-blue-100 text-[#0145f2] text-xs font-semibold uppercase tracking-wider mb-4 border border-blue-200">
             {appointment.badge}
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-4">
@@ -227,8 +227,8 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
 
         {/* Success State / Request Received Confirmation Card */}
         {requestSubmitted && submissionData ? (
-          <div className="bg-white rounded-3xl p-8 sm:p-12 border border-emerald-200 shadow-xl text-center animate-fadeIn">
-            <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-6 shadow-xs">
+          <div className="bg-white rounded-3xl p-8 sm:p-12 border border-blue-200 shadow-xl text-center animate-fadeIn">
+            <div className="w-16 h-16 rounded-full bg-blue-100 text-[#0145f2] flex items-center justify-center mx-auto mb-6 shadow-xs">
               <CheckCircle2 className="w-10 h-10" />
             </div>
 
@@ -237,8 +237,8 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
             </h3>
 
             <p className="text-base text-slate-700 max-w-xl mx-auto mb-6 leading-relaxed">
-              Thank you, <strong className="text-emerald-900">{submissionData.name}</strong>. Your consultation request for{' '}
-              <strong className="text-emerald-900">{formatDate(submissionData.date)}</strong> ({submissionData.timeSlot})
+              Thank you, <strong className="text-blue-950">{submissionData.name}</strong>. Your consultation request for{' '}
+              <strong className="text-blue-950">{formatDate(submissionData.date)}</strong> ({submissionData.timeSlot})
               {submissionData.doctor ? ` with ${submissionData.doctor}` : ''} has been safely logged in our system.
             </p>
 
@@ -263,14 +263,14 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
               </div>
             )}
 
-            <div className="bg-emerald-50/70 border border-emerald-100 rounded-2xl p-5 max-w-lg mx-auto mb-8 text-left text-xs sm:text-sm text-slate-700 space-y-2">
-              <p className="font-semibold text-emerald-950 flex items-center gap-1.5">
-                <Clock className="w-4 h-4 text-emerald-700" />
+            <div className="bg-blue-50/70 border border-blue-100 rounded-2xl p-5 max-w-lg mx-auto mb-8 text-left text-xs sm:text-sm text-slate-700 space-y-2">
+              <p className="font-semibold text-blue-950 flex items-center gap-1.5">
+                <Clock className="w-4 h-4 text-[#0145f2]" />
                 Next Steps from Our Clinical Desk:
               </p>
               <p>• Our front desk will review doctor availability for your requested slot.</p>
               <p>• We will contact you at <strong>{submissionData.phone}</strong> or <strong>{submissionData.email}</strong> to finalize your appointment.</p>
-              <p className="text-slate-500 italic text-[11px] pt-1 border-t border-emerald-200/50">
+              <p className="text-slate-500 italic text-[11px] pt-1 border-t border-blue-200/50">
                 Notice: An appointment is not final until direct verbal or message confirmation is made by our staff.
               </p>
             </div>
@@ -278,18 +278,18 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
             <button
               type="button"
               onClick={() => setRequestSubmitted(false)}
-              className="px-6 py-3 rounded-xl text-sm font-semibold text-white bg-[#0f4c3a] hover:bg-[#0a382a] transition-all shadow-sm active:scale-95 cursor-pointer"
+              className="px-6 py-3 rounded-xl text-sm font-semibold text-white bg-[#0145f2] hover:bg-[#0031b8] transition-all shadow-md shadow-blue-600/20 active:scale-95 cursor-pointer"
             >
               Submit Another Request
             </button>
           </div>
         ) : (
           /* Main Appointment Request Form */
-          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-emerald-100 shadow-xl">
+          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-blue-100 shadow-xl">
 
             {/* Top Form Disclaimer Alert */}
-            <div className="flex items-start gap-3 p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200/60 mb-8 text-xs text-slate-700">
-              <AlertCircle className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
+            <div className="flex items-start gap-3 p-4 rounded-2xl bg-blue-50/70 border border-blue-200/60 mb-8 text-xs text-slate-700">
+              <AlertCircle className="w-5 h-5 text-[#0145f2] shrink-0 mt-0.5" />
               <p className="leading-relaxed">
                 {appointment.disclaimerNotice}
               </p>
@@ -323,7 +323,7 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
                       placeholder="Your Name"
                       className={`w-full pl-10 pr-4 py-3 rounded-xl border text-sm text-slate-800 placeholder-slate-400 bg-slate-50/50 focus:bg-white focus:outline-hidden transition-colors ${errors.name
                         ? 'border-red-300 focus:border-red-500 focus:ring-1 focus:ring-red-500'
-                        : 'border-slate-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500'
+                        : 'border-slate-200 focus:border-[#0145f2] focus:ring-1 focus:ring-[#0145f2]'
                         }`}
                     />
                   </div>
@@ -347,7 +347,7 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
                       placeholder="+91 1234567890"
                       className={`w-full pl-10 pr-4 py-3 rounded-xl border text-sm text-slate-800 placeholder-slate-400 bg-slate-50/50 focus:bg-white focus:outline-hidden transition-colors ${errors.phone
                         ? 'border-red-300 focus:border-red-500 focus:ring-1 focus:ring-red-500'
-                        : 'border-slate-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500'
+                        : 'border-slate-200 focus:border-[#0145f2] focus:ring-1 focus:ring-[#0145f2]'
                         }`}
                     />
                   </div>
@@ -374,7 +374,7 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
                       placeholder="yourname@gmail.com"
                       className={`w-full pl-10 pr-4 py-3 rounded-xl border text-sm text-slate-800 placeholder-slate-400 bg-slate-50/50 focus:bg-white focus:outline-hidden transition-colors ${errors.email
                         ? 'border-red-300 focus:border-red-500 focus:ring-1 focus:ring-red-500'
-                        : 'border-slate-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500'
+                        : 'border-slate-200 focus:border-[#0145f2] focus:ring-1 focus:ring-[#0145f2]'
                         }`}
                     />
                   </div>
@@ -390,7 +390,7 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
                     name="doctor"
                     value={formData.doctor}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 bg-slate-50/50 focus:bg-white focus:border-emerald-500 focus:outline-hidden focus:ring-1 focus:ring-emerald-500 transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 bg-slate-50/50 focus:bg-white focus:border-[#0145f2] focus:outline-hidden focus:ring-1 focus:ring-[#0145f2] transition-colors"
                   >
                     <option value="">Any Available Doctor / General Consultation</option>
                     {doctors.map((doc) => (
@@ -413,7 +413,7 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 bg-slate-50/50 focus:bg-white focus:border-emerald-500 focus:outline-hidden focus:ring-1 focus:ring-emerald-500 transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 bg-slate-50/50 focus:bg-white focus:border-[#0145f2] focus:outline-hidden focus:ring-1 focus:ring-[#0145f2] transition-colors"
                   >
                     <option value="">General Medical Assessment</option>
                     {formData.service && 
@@ -460,7 +460,7 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
                       onChange={handleChange}
                       className={`w-full px-4 py-3 rounded-xl border text-sm text-slate-800 bg-slate-50/50 focus:bg-white focus:outline-hidden transition-colors ${errors.date
                         ? 'border-red-300 focus:border-red-500 focus:ring-1 focus:ring-red-500'
-                        : 'border-slate-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500'
+                        : 'border-slate-200 focus:border-[#0145f2] focus:ring-1 focus:ring-[#0145f2]'
                         }`}
                     />
                   </div>
@@ -476,7 +476,7 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
                     name="timeSlot"
                     value={formData.timeSlot}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 bg-slate-50/50 focus:bg-white focus:border-emerald-500 focus:outline-hidden focus:ring-1 focus:ring-emerald-500 transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 bg-slate-50/50 focus:bg-white focus:border-[#0145f2] focus:outline-hidden focus:ring-1 focus:ring-[#0145f2] transition-colors"
                   >
                     {appointment.timeSlots.map((slot, idx) => (
                       <option key={idx} value={slot}>
@@ -502,7 +502,7 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
                   placeholder="Please describe symptoms, purpose of visit, or questions you would like addressed..."
                   className={`w-full p-4 rounded-xl border text-sm text-slate-800 placeholder-slate-400 bg-slate-50/50 focus:bg-white focus:outline-hidden transition-colors resize-none ${errors.reason
                     ? 'border-red-300 focus:border-red-500 focus:ring-1 focus:ring-red-500'
-                    : 'border-slate-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500'
+                    : 'border-slate-200 focus:border-[#0145f2] focus:ring-1 focus:ring-[#0145f2]'
                     }`}
                 />
                 {errors.reason && <p className="text-xs text-red-600 mt-1">{errors.reason}</p>}
@@ -513,7 +513,7 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-[#0f4c3a] to-[#145d47] hover:from-[#0a382a] hover:to-[#0f4d3a] shadow-lg shadow-emerald-950/15 hover:shadow-xl transition-all duration-200 active:scale-98 disabled:opacity-70 disabled:cursor-not-allowed focus:outline-hidden focus-visible:ring-2 focus-visible:ring-emerald-600"
+                  className="w-full flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-[#0145f2] to-[#1e60ff] hover:from-[#0031b8] hover:to-[#0145f2] shadow-lg shadow-blue-600/25 hover:shadow-xl transition-all duration-200 active:scale-98 disabled:opacity-70 disabled:cursor-not-allowed focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#0145f2]"
                 >
                   {isSubmitting ? (
                     <>
@@ -522,7 +522,7 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
                     </>
                   ) : (
                     <>
-                      <Calendar className="w-5 h-5 text-emerald-300" />
+                      <Calendar className="w-5 h-5 text-blue-200" />
                       <span>Request Appointment</span>
                     </>
                   )}

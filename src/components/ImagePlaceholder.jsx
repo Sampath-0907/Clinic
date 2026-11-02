@@ -28,30 +28,30 @@ export const ImagePlaceholder = ({
   const renderIcon = () => {
     switch (type) {
       case "doctor":
-        return <User className="w-12 h-12 text-emerald-700/60" />;
+        return <User className="w-12 h-12 text-[#0145f2]/70" />;
       case "about":
-        return <Building className="w-12 h-12 text-emerald-700/60" />;
+        return <Building className="w-12 h-12 text-[#0145f2]/70" />;
       case "hero":
-        return <Camera className="w-12 h-12 text-emerald-700/60" />;
+        return <Camera className="w-12 h-12 text-[#0145f2]/70" />;
       default:
-        return <ImageIcon className="w-12 h-12 text-emerald-700/60" />;
+        return <ImageIcon className="w-12 h-12 text-[#0145f2]/70" />;
     }
   };
 
   return (
     <div
-      className={`relative flex flex-col items-center justify-center p-6 bg-gradient-to-br from-emerald-50/80 via-white to-emerald-100/40 border-2 border-dashed border-emerald-300/80 rounded-2xl text-center group transition-all duration-300 hover:border-emerald-500 hover:shadow-md ${aspectRatio} ${className}`}
+      className={`relative flex flex-col items-center justify-center p-6 bg-gradient-to-br from-[#edf1f5] via-white to-blue-50/50 border-2 border-dashed border-blue-200/80 rounded-2xl text-center group transition-all duration-300 hover:border-[#0145f2] hover:shadow-md ${aspectRatio} ${className}`}
       role="img"
       aria-label={`${alt} - Placeholder`}
     >
-      <div className="w-16 h-16 rounded-full bg-emerald-100/80 flex items-center justify-center mb-3 text-emerald-800 shadow-xs group-hover:scale-105 transition-transform">
+      <div className="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mb-3 text-[#0145f2] shadow-xs group-hover:scale-105 transition-transform">
         {renderIcon()}
       </div>
-      <span className="font-mono text-xs font-semibold px-2.5 py-1 rounded-md bg-emerald-100/90 text-emerald-900 border border-emerald-300/70 tracking-wide uppercase">
+      <span className="font-mono text-xs font-semibold px-2.5 py-1 rounded-md bg-blue-50 text-[#0145f2] border border-blue-200/70 tracking-wide uppercase">
         {label}
       </span>
       <p className="text-[11px] text-slate-500 mt-2 max-w-[200px] leading-tight">
-        Add image in <code className="text-emerald-800 font-mono text-[10px] bg-emerald-50 px-1 py-0.5 rounded">src/data/clinic.js</code>
+        Add image in <code className="text-[#0145f2] font-mono text-[10px] bg-blue-50 px-1 py-0.5 rounded">src/data/clinic.js</code>
       </p>
     </div>
   );

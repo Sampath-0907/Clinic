@@ -37,8 +37,8 @@ export const Services = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-900 text-xs font-semibold uppercase tracking-wider mb-4 border border-emerald-200 shadow-2xs">
-            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 text-[#0145f2] text-xs font-semibold uppercase tracking-wider mb-4 border border-blue-200 shadow-2xs">
+            <Sparkles className="w-3.5 h-3.5 text-[#0145f2]" />
             <span>Comprehensive Medical Services</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-4">
@@ -55,8 +55,8 @@ export const Services = () => {
               onClick={() => setActiveFilter('all')}
               className={`px-4.5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                 activeFilter === 'all'
-                  ? 'bg-[#0f4c3a] text-white shadow-md'
-                  : 'bg-white text-slate-600 hover:text-slate-900 hover:bg-emerald-50 border border-slate-200/80'
+                  ? 'bg-[#0145f2] text-white shadow-md shadow-blue-600/20'
+                  : 'bg-white text-slate-600 hover:text-slate-900 hover:bg-blue-50 border border-slate-200/80'
               }`}
             >
               All Services ({services.length})
@@ -78,8 +78,8 @@ export const Services = () => {
               onClick={() => setActiveFilter('psychiatry')}
               className={`inline-flex items-center gap-1.5 px-4.5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                 activeFilter === 'psychiatry'
-                  ? 'bg-emerald-800 text-white shadow-md'
-                  : 'bg-white text-emerald-800 hover:bg-emerald-50 border border-emerald-200/80'
+                  ? 'bg-[#0145f2] text-white shadow-md shadow-blue-600/20'
+                  : 'bg-white text-[#0145f2] hover:bg-blue-50 border border-blue-200/80'
               }`}
             >
               <Brain className="w-3.5 h-3.5" />
@@ -95,7 +95,7 @@ export const Services = () => {
           
           {/* Framed Container */}
           <div 
-            className="relative rounded-3xl bg-white/80 border border-emerald-100/90 shadow-sm backdrop-blur-xs p-4 sm:p-6 overflow-hidden"
+            className="relative rounded-3xl bg-white/80 border border-blue-100/90 shadow-sm backdrop-blur-xs p-4 sm:p-6 overflow-hidden"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
@@ -120,7 +120,7 @@ export const Services = () => {
                   return (
                     <div
                       key={`${service.id}-${index}`}
-                      className="group relative flex flex-col justify-between w-[310px] sm:w-[350px] shrink-0 bg-white rounded-2xl p-6 sm:p-7 border border-emerald-100/90 shadow-xs hover:shadow-xl hover:border-emerald-300 transition-all duration-300 hover:-translate-y-1.5"
+                      className="group relative flex flex-col justify-between w-[310px] sm:w-[350px] shrink-0 bg-white rounded-2xl p-6 sm:p-7 border border-blue-100/90 shadow-xs hover:shadow-xl hover:border-blue-300 transition-all duration-300 hover:-translate-y-1.5"
                     >
                       <div>
                         {/* Top Row: Category Pill & Icon */}
@@ -128,21 +128,21 @@ export const Services = () => {
                           <span className={`inline-block px-3 py-1 rounded-full text-[11px] font-bold tracking-wide border ${
                             isGynae 
                               ? 'bg-rose-50 text-rose-800 border-rose-100'
-                              : 'bg-emerald-50 text-emerald-800 border-emerald-100'
+                              : 'bg-blue-50 text-[#0145f2] border-blue-100'
                           }`}>
                             {categoryTag}
                           </span>
                           <div className={`w-11 h-11 rounded-xl flex items-center justify-center transition-colors duration-300 shadow-2xs ${
                             isGynae
                               ? 'bg-rose-50 text-rose-700 group-hover:bg-rose-700 group-hover:text-white'
-                              : 'bg-emerald-50 text-emerald-700 group-hover:bg-[#0f4c3a] group-hover:text-emerald-300'
+                              : 'bg-blue-50 text-[#0145f2] group-hover:bg-[#0145f2] group-hover:text-white'
                           }`}>
                             <DynamicIcon name={service.iconName} className="w-5 h-5" />
                           </div>
                         </div>
 
                         {/* Service Title */}
-                        <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2.5 group-hover:text-[#0f4c3a] transition-colors line-clamp-2 h-[54px] flex items-center">
+                        <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2.5 group-hover:text-[#0145f2] transition-colors line-clamp-2 h-[54px] flex items-center">
                           {service.name}
                         </h3>
 
@@ -156,7 +156,7 @@ export const Services = () => {
                           <div className="space-y-2 mb-6 pt-3.5 border-t border-slate-100">
                             {service.features.slice(0, 3).map((feature, fIdx) => (
                               <div key={fIdx} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
-                                <Check className={`w-3.5 h-3.5 shrink-0 ${isGynae ? 'text-rose-500' : 'text-emerald-500'}`} />
+                                <Check className={`w-3.5 h-3.5 shrink-0 ${isGynae ? 'text-rose-500' : 'text-[#0145f2]'}`} />
                                 <span className="truncate">{feature}</span>
                               </div>
                             ))}
@@ -179,8 +179,8 @@ export const Services = () => {
           <div className="relative">
             {/* Directory Header */}
             <div className="text-center max-w-2xl mx-auto mb-10">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-2 border border-emerald-200">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-[#0145f2] text-xs font-bold uppercase tracking-wider mb-2 border border-blue-200">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#0145f2]" />
                 <span>Complete Clinical Directory</span>
               </span>
               <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-2">
@@ -242,20 +242,20 @@ export const Services = () => {
               </div>
 
               {/* Column 2: Psychiatry Services (Dr. Vivaswan Boorla) */}
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border-2 border-emerald-100 shadow-sm relative overflow-hidden flex flex-col justify-between">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-50/70 rounded-full blur-2xl pointer-events-none -mr-10 -mt-10" />
+              <div className="bg-white rounded-3xl p-6 sm:p-8 border-2 border-blue-100 shadow-sm relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50/70 rounded-full blur-2xl pointer-events-none -mr-10 -mt-10" />
 
                 <div>
                   {/* Department Badge & Title */}
-                  <div className="flex items-center gap-3.5 mb-4 pb-4 border-b border-emerald-100/80">
-                    <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-800 flex items-center justify-center shrink-0 border border-emerald-200/60 shadow-2xs">
+                  <div className="flex items-center gap-3.5 mb-4 pb-4 border-b border-blue-100/80">
+                    <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#0145f2] flex items-center justify-center shrink-0 border border-blue-200/60 shadow-2xs">
                       <Brain className="w-6 h-6" />
                     </div>
                     <div>
                       <h4 className="text-lg sm:text-xl font-bold text-slate-900">
                         {clinicalDirectory.psychiatry.category}
                       </h4>
-                      <p className="text-xs font-semibold text-emerald-800">
+                      <p className="text-xs font-semibold text-[#0145f2]">
                         {clinicalDirectory.psychiatry.doctorName} • {clinicalDirectory.psychiatry.doctorTitle}
                       </p>
                     </div>
@@ -270,9 +270,9 @@ export const Services = () => {
                     {clinicalDirectory.psychiatry.items.map((item, idx) => (
                       <div
                         key={idx}
-                        className="flex items-center gap-2.5 p-2.5 rounded-xl bg-emerald-50/40 border border-emerald-100 text-left"
+                        className="flex items-center gap-2.5 p-2.5 rounded-xl bg-blue-50/50 border border-blue-100 text-left"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#0145f2] shrink-0" />
                         <span className="text-xs font-semibold text-slate-800">
                           {item}
                         </span>
@@ -281,8 +281,8 @@ export const Services = () => {
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-emerald-100/80">
-                  <span className="text-xs font-medium text-emerald-800/80">
+                <div className="pt-3 border-t border-blue-100/80">
+                  <span className="text-xs font-medium text-[#0145f2]">
                     23 specialized psychiatric & mental wellness conditions
                   </span>
                 </div>
@@ -296,7 +296,7 @@ export const Services = () => {
         <div className="mt-14 text-center">
           <p className="text-xs sm:text-sm text-slate-500">
             Need a clinical consultation or second opinion not listed above?{' '}
-            <a href="#contact" className="text-[#0f4c3a] font-semibold underline underline-offset-4 hover:text-emerald-600">
+            <a href="#contact" className="text-[#0145f2] font-semibold underline underline-offset-4 hover:text-[#0031b8]">
               Inquire with our clinic reception
             </a>{' '}
             or call our direct office line.

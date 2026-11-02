@@ -22,12 +22,12 @@ export const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="py-20 bg-white border-y border-emerald-100/60">
+    <section id="testimonials" className="py-20 bg-white border-y border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-4 border border-emerald-200">
+          <span className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-blue-50 text-[#0145f2] text-xs font-semibold uppercase tracking-wider mb-4 border border-blue-200/70">
             {testimonials.badge}
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-4">
@@ -48,8 +48,8 @@ export const Testimonials = () => {
         <div className="relative max-w-4xl mx-auto">
           
           {/* Active Testimonial Card */}
-          <div className="bg-gradient-to-br from-emerald-50/40 via-white to-teal-50/30 rounded-3xl p-8 sm:p-12 border border-emerald-100 shadow-sm relative">
-            <Quote className="w-12 h-12 text-emerald-200 absolute top-6 right-6 opacity-60" />
+          <div className="bg-gradient-to-br from-[#edf1f5] via-white to-blue-50/40 rounded-3xl p-8 sm:p-12 border border-blue-100 shadow-sm relative">
+            <Quote className="w-12 h-12 text-blue-200 absolute top-6 right-6 opacity-60" />
 
             {/* Star Rating */}
             <div className="flex items-center gap-1 mb-6">
@@ -64,16 +64,16 @@ export const Testimonials = () => {
             </blockquote>
 
             {/* Author & Visit Tag */}
-            <div className="flex items-center justify-between flex-wrap gap-4 pt-6 border-t border-emerald-100">
+            <div className="flex items-center justify-between flex-wrap gap-4 pt-6 border-t border-slate-200/80">
               <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-full bg-[#0f4c3a] text-white flex items-center justify-center font-bold text-sm shadow-xs">
+                <div className="w-11 h-11 rounded-full bg-[#0145f2] text-white flex items-center justify-center font-bold text-sm shadow-xs">
                   {items[currentIndex].author.replace(/[\[\]]/g, '').slice(0, 2) || 'PT'}
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-slate-900">
                     {items[currentIndex].author}
                   </h4>
-                  <p className="text-xs text-emerald-800 font-medium">
+                  <p className="text-xs text-[#0145f2] font-medium">
                     {items[currentIndex].visitType}
                   </p>
                 </div>
@@ -85,7 +85,7 @@ export const Testimonials = () => {
                   type="button"
                   onClick={prevTestimonial}
                   aria-label="Previous testimonial"
-                  className="p-2.5 rounded-full bg-white border border-emerald-200 text-slate-700 hover:bg-emerald-50 hover:text-[#0f4c3a] transition-colors shadow-2xs focus:outline-hidden focus-visible:ring-2 focus-visible:ring-emerald-600"
+                  className="p-2.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:bg-blue-50 hover:text-[#0145f2] transition-colors shadow-2xs focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#0145f2]"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
@@ -93,7 +93,7 @@ export const Testimonials = () => {
                   type="button"
                   onClick={nextTestimonial}
                   aria-label="Next testimonial"
-                  className="p-2.5 rounded-full bg-white border border-emerald-200 text-slate-700 hover:bg-emerald-50 hover:text-[#0f4c3a] transition-colors shadow-2xs focus:outline-hidden focus-visible:ring-2 focus-visible:ring-emerald-600"
+                  className="p-2.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:bg-blue-50 hover:text-[#0145f2] transition-colors shadow-2xs focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#0145f2]"
                 >
                   <ChevronRight className="w-5 h-5" />
                 </button>
@@ -111,8 +111,8 @@ export const Testimonials = () => {
                 aria-label={`Go to testimonial ${idx + 1}`}
                 className={`h-2.5 rounded-full transition-all duration-300 ${
                   currentIndex === idx
-                    ? 'w-8 bg-[#0f4c3a]'
-                    : 'w-2.5 bg-emerald-200 hover:bg-emerald-300'
+                    ? 'w-8 bg-[#0145f2]'
+                    : 'w-2.5 bg-blue-200 hover:bg-blue-300'
                 }`}
               />
             ))}
