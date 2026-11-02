@@ -402,50 +402,8 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
                 </div>
               </div>
 
-              {/* Row 3: Preferred Service, Date & Time Slot */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <div>
-                  <label htmlFor="service" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                    Service (Optional)
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 bg-slate-50/50 focus:bg-white focus:border-[#0145f2] focus:outline-hidden focus:ring-1 focus:ring-[#0145f2] transition-colors"
-                  >
-                    <option value="">General Medical Assessment</option>
-                    {formData.service && 
-                     !services.some(s => s.name === formData.service) &&
-                     !clinicalDirectory?.gynaecology?.items?.includes(formData.service) &&
-                     !clinicalDirectory?.psychiatry?.items?.includes(formData.service) && (
-                      <option value={formData.service}>{formData.service}</option>
-                    )}
-                    {clinicalDirectory && (
-                      <>
-                        <optgroup label="🌸 Gynaecology & Women's Health (Dr. Soujanya)">
-                          {clinicalDirectory.gynaecology.items.map((item, idx) => (
-                            <option key={`gyn-${idx}`} value={item}>{item}</option>
-                          ))}
-                        </optgroup>
-                        <optgroup label="🧠 Psychiatry & Mind Care (Dr. Vivaswan)">
-                          {clinicalDirectory.psychiatry.items.map((item, idx) => (
-                            <option key={`psy-${idx}`} value={item}>{item}</option>
-                          ))}
-                        </optgroup>
-                      </>
-                    )}
-                    <optgroup label="🏥 Core Clinical Packages">
-                      {services.map((srv) => (
-                        <option key={srv.id} value={srv.name}>
-                          {srv.name}
-                        </option>
-                      ))}
-                    </optgroup>
-                  </select>
-                </div>
-
+              {/* Row 3: Preferred Date & Time Slot */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="date" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                     Preferred Date <span className="text-red-500">*</span>
