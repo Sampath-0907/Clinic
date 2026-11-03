@@ -198,11 +198,13 @@ export const Navbar = () => {
             {navLinks.map((link) => {
               const linkId = link.href.replace('#', '');
               const isActive = activeSection === linkId;
+              const isContact = link.href === '#contact';
+              const targetHref = isContact ? `tel:${clinicData.contact?.phoneTel || clinicData.contact?.phone || '+916303818118'}` : link.href;
 
               return (
                 <a
                   key={link.href}
-                  href={link.href}
+                  href={targetHref}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-semibold transition-all ${
                     isActive

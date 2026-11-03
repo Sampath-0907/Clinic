@@ -2,6 +2,8 @@ import React from 'react';
 import { clinicData } from '../data/clinic';
 
 export const MobileBottomBar = ({ onSelectAppointment }) => {
+  const phoneHref = `tel:${clinicData.contact?.phoneTel || clinicData.contact?.phone || '+916303818118'}`;
+
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
     if (el) {
@@ -16,11 +18,6 @@ export const MobileBottomBar = ({ onSelectAppointment }) => {
     } else {
       scrollToSection('appointment');
     }
-  };
-
-  const handleContactClick = (e) => {
-    e.preventDefault();
-    scrollToSection('contact');
   };
 
   const handleLogoClick = (e) => {
@@ -80,12 +77,11 @@ export const MobileBottomBar = ({ onSelectAppointment }) => {
           </span>
         </div>
 
-        {/* 3. Contact Button (Toy Medical Support Phone Icon) */}
-        <button
-          type="button"
-          onClick={handleContactClick}
+        {/* 3. Contact Button (Toy Medical Support Phone Icon - Directly calls on mobile) */}
+        <a
+          href={phoneHref}
           className="flex-1 flex flex-col items-center justify-center gap-1 py-1 text-slate-700 hover:text-[#0145f2] active:scale-90 transition-all cursor-pointer group"
-          aria-label="Contact clinic"
+          aria-label="Call clinic directly"
         >
           <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-100/80 p-0.5 flex items-center justify-center shadow-sm border border-blue-200/70 group-hover:scale-105 group-hover:shadow-md transition-all overflow-hidden">
             <img
@@ -97,7 +93,7 @@ export const MobileBottomBar = ({ onSelectAppointment }) => {
           <span className="text-[11px] font-bold tracking-tight text-slate-700 group-hover:text-[#0145f2]">
             Contact
           </span>
-        </button>
+        </a>
 
       </div>
     </nav>
