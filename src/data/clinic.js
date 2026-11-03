@@ -492,12 +492,12 @@ export const clinicData = {
     subtitle:
       "Conveniently located in Pragati Nagar, Hyderabad, serving families across Pragati Nagar, Nizampet, Bachupally, and KPHB.",
     address: "Dr. Soujanya’s Mother and Mind Care, Pragati Nagar, Hyderabad, Telangana",
-    phone: "+91 98765 43210", // Clinic contact number
-    phoneTel: "+919876543210",
-    email: "contact@motherandmindclinic.com",
+    phone: "+91 63038 18118", // Clinic contact number
+    phoneTel: "+916303818118",
+    email: "drsoujanyasmotherandmindcare@gmail.com",
     googleMapsUrl: "https://maps.google.com/?q=Pragati+Nagar+Hyderabad",
-    whatsapp: "8919009613",
-    whatsappDisplay: "+91 98765 43210",
+    whatsapp: "8317509180",
+    whatsappDisplay: "+91 83175 09180",
     operatingHours: [
       { days: "Monday - Saturday", hours: "9:00 AM - 9:00 PM", isOpenDay: true },
       { days: "Sunday", hours: "Prior Appointment / Emergency Support", isOpenDay: false },
