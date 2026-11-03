@@ -3,7 +3,7 @@ import { Activity, ArrowUp, Phone, Mail, MapPin } from 'lucide-react';
 import { clinicData } from '../data/clinic';
 import DynamicIcon from './DynamicIcon';
 
-export const Footer = () => {
+export const Footer = ({ onNavigate }) => {
   const { clinicName, logoUrl, footer, navLinks, services, contact } = clinicData;
   const currentYear = new Date().getFullYear();
 
@@ -124,23 +124,27 @@ export const Footer = () => {
           {footer.medicalDisclaimer}
         </div>
 
-        {/* Bottom Bar: Copyright & Back to Top */}
+        {/* Bottom Bar: Copyright & Navigation */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p>
             {footer.copyright.replace('{year}', currentYear)}
           </p>
 
           <div className="flex items-center gap-6">
-            {footer.privacyLink && (
-              <a href={footer.privacyLink} className="hover:text-blue-300 transition-colors">
-                Privacy Policy
-              </a>
-            )}
-            {footer.termsLink && (
-              <a href={footer.termsLink} className="hover:text-blue-300 transition-colors">
-                Terms of Service
-              </a>
-            )}
+            <button
+              type="button"
+              onClick={() => onNavigate ? onNavigate('privacy') : (window.location.href = '/privacy-policy')}
+              className="hover:text-blue-300 transition-colors cursor-pointer"
+            >
+              Privacy Policy
+            </button>
+            <button
+              type="button"
+              onClick={() => onNavigate ? onNavigate('terms') : (window.location.href = '/terms-of-service')}
+              className="hover:text-blue-300 transition-colors cursor-pointer"
+            >
+              Terms of Service
+            </button>
             <button
               type="button"
               onClick={scrollToTop}
