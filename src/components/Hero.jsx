@@ -60,9 +60,14 @@ export const Hero = () => {
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             
             {/* Top Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50/90 border border-blue-200/80 text-[#0145f2] text-xs sm:text-sm font-semibold mb-6 shadow-2xs">
-              <span className="w-2 h-2 rounded-full bg-[#0145f2] animate-pulse" />
-              <span>{hero.badge}</span>
+            <div className="inline-flex flex-wrap items-center gap-2 px-3 py-1.5 rounded-full bg-white/95 border border-blue-200/90 shadow-xs mb-6 text-xs sm:text-sm">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-linear-to-r from-[#061234] to-[#0145f2] text-white text-[10px] sm:text-xs font-bold tracking-wide uppercase shadow-2xs">
+                <Sparkles className="w-3 h-3 text-blue-200" />
+                <span>{hero.badgeTag || "Speciality Clinic"}</span>
+              </span>
+              <span className="font-semibold text-slate-800 pr-1">
+                {hero.badge}
+              </span>
             </div>
 
             {/* Official Clinic Logo (Replacing previous text headline) */}
