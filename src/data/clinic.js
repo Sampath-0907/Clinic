@@ -521,8 +521,8 @@ export const clinicData = {
     socialLinks: [
       { name: "Facebook", href: "https://facebook.com", iconName: "Facebook" },
       { name: "Instagram", href: "https://instagram.com", iconName: "Instagram" },
-      { name: "LinkedIn", href: "https://linkedin.com", iconName: "Linkedin" },
-      { name: "Twitter", href: "https://twitter.com", iconName: "Twitter" },
+      { name: "WhatsApp", href: "https://wa.me/918317509180", iconName: "WhatsApp" },
+      { name: "Email", href: "mailto:drsoujanyasmotherandmindcare@gmail.com", iconName: "Mail" },
     ],
   },
 };

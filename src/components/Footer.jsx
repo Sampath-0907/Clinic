@@ -43,8 +43,8 @@ export const Footer = ({ onNavigate }) => {
                 <a
                   key={social.name}
                   href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={social.href.startsWith('mailto:') ? undefined : "_blank"}
+                  rel={social.href.startsWith('mailto:') ? undefined : "noopener noreferrer"}
                   aria-label={social.name}
                   className="w-9 h-9 rounded-lg bg-[#0b1b4f] hover:bg-[#0145f2] border border-blue-800/40 flex items-center justify-center text-slate-300 hover:text-white transition-colors focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#0145f2]"
                 >
