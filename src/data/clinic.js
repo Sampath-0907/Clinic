@@ -35,7 +35,7 @@ export const clinicData = {
   // --------------------------------------------------------------------------
   hero: {
     badgeTag: "Speciality Clinic",
-    badge: "Maternal Health • Laparoscopy • Mind Care",
+    badge: "Gentle Procedures. Mindful Solutions.",
     headline: "Compassionate Healthcare & Mindful Support for Mother & Child",
     subheadline:
       "Welcome to Dr. Soujanya's Mother and Mind Care. We provide personalized, compassionate, and comprehensive clinical care for women, mothers, and children alongside dedicated mental health services and psychological counselling and therapies.",
