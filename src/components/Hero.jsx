@@ -68,7 +68,7 @@ export const Hero = () => {
             {/* Official Clinic Logo (Replacing previous text headline) */}
             <div className="mb-6 max-w-2xl w-full">
               <img
-                src={clinicData.logoUrl || "/Clinic Logo 2.png"}
+                src={clinicData.bannerLogoUrl || "/Clinic Logo 2.png"}
                 alt={clinicData.clinicName}
                 className="w-auto max-w-full h-auto max-h-28 sm:max-h-36 md:max-h-44 lg:max-h-52 object-contain object-left drop-shadow-xs"
               />

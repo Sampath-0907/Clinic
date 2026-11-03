@@ -98,11 +98,11 @@ export const Navbar = () => {
               className="flex items-center gap-2.5 sm:gap-3 group focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#0145f2] rounded-xl p-1 min-w-0 flex-1 lg:flex-initial"
             >
               {clinicData.logoUrl ? (
-                <div className="relative p-0.5 rounded-xl bg-gradient-to-tr from-blue-100 to-white shadow-xs group-hover:shadow-md transition-shadow shrink-0">
+                <div className="relative p-0.5 rounded-full bg-gradient-to-tr from-amber-100 via-white to-blue-50 shadow-xs group-hover:shadow-md transition-shadow shrink-0">
                   <img
                     src={clinicData.logoUrl}
                     alt={clinicData.clinicName}
-                    className="h-9 sm:h-11 w-auto object-contain rounded-lg"
+                    className="w-10 h-10 sm:w-11 sm:h-11 object-contain rounded-full"
                   />
                 </div>
               ) : (

@@ -22,7 +22,7 @@ export const Footer = ({ onNavigate }) => {
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
               {logoUrl ? (
-                <img src={logoUrl} alt={clinicName} className="h-10 w-auto object-contain rounded-lg" />
+                <img src={logoUrl} alt={clinicName} className="w-10 h-10 object-contain rounded-full" />
               ) : (
                 <div className="w-10 h-10 rounded-xl bg-[#0145f2]/20 text-blue-300 flex items-center justify-center border border-[#0145f2]/30">
                   <Activity className="w-5 h-5 text-[#0145f2]" />
