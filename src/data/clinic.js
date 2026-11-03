@@ -491,11 +491,11 @@ export const clinicData = {
     title: "Contact & Clinic Location",
     subtitle:
       "Conveniently located in Pragati Nagar, Hyderabad, serving families across Pragati Nagar, Nizampet, Bachupally, and KPHB.",
-    address: "Dr. Soujanya’s Mother and Mind Care, Pragati Nagar, Hyderabad, Telangana",
+    address: "1st Floor, Plot No. 264, Back Side of Ruchi Vanam, Near ALEAP Circle, Kakatiya Hills, Pragathi Nagar, Hyderabad, Telangana 500090",
     phone: "+91 63038 18118", // Clinic contact number
     phoneTel: "+916303818118",
     email: "drsoujanyasmotherandmindcare@gmail.com",
-    googleMapsUrl: "https://maps.google.com/?q=Pragati+Nagar+Hyderabad",
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Plot+No+264+Kakatiya+Hills+Pragathi+Nagar+Hyderabad+Telangana+500090",
     whatsapp: "+91 83175 09180",
     whatsappDisplay: "+91 83175 09180",
     operatingHours: [
