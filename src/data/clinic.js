@@ -496,7 +496,7 @@ export const clinicData = {
     phoneTel: "+916303818118",
     email: "drsoujanyasmotherandmindcare@gmail.com",
     googleMapsUrl: "https://maps.google.com/?q=Pragati+Nagar+Hyderabad",
-    whatsapp: "8317509180",
+    whatsapp: "83175 09180",
     whatsappDisplay: "+91 83175 09180",
     operatingHours: [
       { days: "Monday - Saturday", hours: "9:00 AM - 9:00 PM", isOpenDay: true },
