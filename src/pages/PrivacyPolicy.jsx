@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { ArrowLeft, Shield, Lock, FileText, CheckCircle2, Phone, Mail, MapPin, Printer } from 'lucide-react';
 import { clinicData } from '../data/clinic';
+import { handleEmailClick, getEmailUrl } from '../utils/mailHelper';
 
 export const PrivacyPolicy = ({ onNavigateHome }) => {
   useEffect(() => {
@@ -170,10 +171,17 @@ export const PrivacyPolicy = ({ onNavigateHome }) => {
                 <Phone className="w-4 h-4 text-[#0145f2] shrink-0" />
                 <span>{clinicData.contact.phone}</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-700">
+              <a
+                href={getEmailUrl(clinicData.contact.email)}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => handleEmailClick(e, clinicData.contact.email)}
+                className="flex items-center gap-2 text-slate-700 hover:text-[#0145f2] transition-colors cursor-pointer"
+                title="Send email"
+              >
                 <Mail className="w-4 h-4 text-[#0145f2] shrink-0" />
                 <span>{clinicData.contact.email}</span>
-              </div>
+              </a>
               <div className="flex items-center gap-2 text-slate-700">
                 <Lock className="w-4 h-4 text-[#0145f2] shrink-0" />
                 <span>Data Protection Desk</span>

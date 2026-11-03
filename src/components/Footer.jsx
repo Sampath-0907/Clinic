@@ -2,6 +2,7 @@ import React from 'react';
 import { Activity, ArrowUp, Phone, Mail, MapPin } from 'lucide-react';
 import { clinicData } from '../data/clinic';
 import DynamicIcon from './DynamicIcon';
+import { handleEmailClick, getEmailUrl } from '../utils/mailHelper';
 
 export const Footer = ({ onNavigate }) => {
   const { clinicName, logoUrl, footer, navLinks, services, contact } = clinicData;
@@ -39,18 +40,26 @@ export const Footer = ({ onNavigate }) => {
 
             {/* Social Links */}
             <div className="pt-2 flex items-center gap-2.5">
-              {footer.socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target={social.href.startsWith('mailto:') ? undefined : "_blank"}
-                  rel={social.href.startsWith('mailto:') ? undefined : "noopener noreferrer"}
-                  aria-label={social.name}
-                  className="w-9 h-9 rounded-lg bg-[#0b1b4f] hover:bg-[#0145f2] border border-blue-800/40 flex items-center justify-center text-slate-300 hover:text-white transition-colors focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#0145f2]"
-                >
-                  <DynamicIcon name={social.iconName} className="w-4 h-4" />
-                </a>
-              ))}
+              {footer.socialLinks.map((social) => {
+                const isEmail = social.name.toLowerCase() === 'email';
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => {
+                      if (isEmail) {
+                        handleEmailClick(e, contact.email);
+                      }
+                    }}
+                    aria-label={social.name}
+                    className="w-9 h-9 rounded-lg bg-[#0b1b4f] hover:bg-[#0145f2] border border-blue-800/40 flex items-center justify-center text-slate-300 hover:text-white transition-colors focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#0145f2]"
+                  >
+                    <DynamicIcon name={social.iconName} className="w-4 h-4" />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
@@ -110,7 +119,14 @@ export const Footer = ({ onNavigate }) => {
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#0145f2] shrink-0" />
-                <a href={`mailto:${contact.email}`} className="hover:text-blue-300">
+                <a
+                  href={getEmailUrl(contact.email)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => handleEmailClick(e, contact.email)}
+                  className="hover:text-blue-300 transition-colors cursor-pointer"
+                  title="Send email"
+                >
                   {contact.email}
                 </a>
               </div>

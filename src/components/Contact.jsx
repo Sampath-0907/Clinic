@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Clock, ExternalLink, MessageCircle, AlertTriangle, Building } from 'lucide-react';
 import { clinicData } from '../data/clinic';
+import { handleEmailClick, getEmailUrl } from '../utils/mailHelper';
 
 export const Contact = () => {
   const { contact } = clinicData;
@@ -81,8 +82,12 @@ export const Contact = () => {
                   <h3 className="text-base font-bold text-slate-900 mb-1">Email Desk</h3>
                   <p className="text-xs text-slate-500 mb-1">For non-urgent queries and documentation:</p>
                   <a
-                    href={`mailto:${contact.email}`}
-                    className="text-sm font-semibold text-[#0145f2] hover:text-[#0031b8] transition-colors"
+                    href={getEmailUrl(contact.email)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => handleEmailClick(e, contact.email)}
+                    className="text-sm font-semibold text-[#0145f2] hover:text-[#0031b8] transition-colors cursor-pointer"
+                    title="Send email"
                   >
                     {contact.email}
                   </a>

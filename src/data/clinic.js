@@ -522,7 +522,7 @@ export const clinicData = {
       { name: "Facebook", href: "https://facebook.com", iconName: "Facebook" },
       { name: "Instagram", href: "https://instagram.com", iconName: "Instagram" },
       { name: "WhatsApp", href: "https://wa.me/918317509180", iconName: "WhatsApp" },
-      { name: "Email", href: "mailto:drsoujanyasmotherandmindcare@gmail.com", iconName: "Mail" },
+      { name: "Email", href: "https://mail.google.com/mail/?view=cm&fs=1&to=drsoujanyasmotherandmindcare@gmail.com", iconName: "Mail" },
     ],
   },
 };
