@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { X, Calendar, Clock, User, Phone, Mail, FileText, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 import { clinicData } from '../data/clinic';
 
@@ -213,9 +214,9 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
 
   const whatsappRedirectUrl = submissionData ? getWhatsAppBookingUrl(submissionData) : null;
 
-  return (
+  const modalContent = (
     <div 
-      className={`fixed inset-0 z-[60] flex flex-col justify-end sm:justify-center items-center p-0 sm:p-4 bg-slate-900/60 backdrop-blur-xs transition-opacity duration-300 ${
+      className={`fixed inset-0 z-[9999] flex flex-col justify-end sm:justify-center items-center p-0 sm:p-4 bg-slate-900/60 backdrop-blur-xs transition-opacity duration-300 ${
         isClosing ? 'opacity-0' : 'animate-backdrop-in'
       }`}
       onClick={(e) => {
@@ -223,7 +224,7 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
       }}
     >
       <div 
-        className={`w-full max-w-lg max-h-[92dvh] sm:max-h-[88vh] bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 ease-out border-t sm:border border-blue-100 ${
+        className={`w-full max-w-lg max-h-[90dvh] sm:max-h-[85vh] h-auto bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 ease-out border-t sm:border border-blue-100 ${
           isClosing ? 'translate-y-8 sm:scale-95 opacity-0' : 'animate-modal-center'
         }`}
         role="dialog"
@@ -478,6 +479,8 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
       </div>
     </div>
   );
+
+  return typeof document !== 'undefined' ? createPortal(modalContent, document.body) : null;
 };
 
 export default AppointmentModal;
