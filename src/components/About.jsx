@@ -51,15 +51,6 @@ export const About = () => {
                 </div>
               </div>
 
-              {/* Overlapping Secondary Image Thumbnail */}
-              <div className="hidden sm:block absolute -bottom-8 -left-6 w-44 h-44 rounded-2xl bg-white p-2 shadow-2xl border border-blue-100 overflow-hidden transform -rotate-2 hover:rotate-0 transition-transform duration-300">
-                <img
-                  src={about.secondaryImage || "/clinic-consultation.jpg"}
-                  alt="Clinical Consultation Space"
-                  className="w-full h-full object-cover rounded-xl"
-                />
-              </div>
-
               {/* Floating Experience & Empathy Badge */}
               <div className="absolute -bottom-6 -right-2 sm:right-2 bg-gradient-to-r from-[#061234] to-[#091E5A] text-white p-4 sm:p-5 rounded-2xl shadow-2xl flex items-center gap-3.5 border border-blue-400/30 backdrop-blur-md">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0145f2] to-[#1e60ff] text-white flex items-center justify-center shrink-0 shadow-md">

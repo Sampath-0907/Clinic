@@ -99,7 +99,6 @@ export const clinicData = {
       "Complete mental health care of all the age groups under one roof"
     ],
     aboutImage: "/about-clinic.jpg",
-    secondaryImage: "/clinic-consultation.jpg",
     experienceYearsBadge: "Excellence & Empathy",
   },
 
