@@ -13,41 +13,47 @@ export const TermsOfService = ({ onNavigateHome }) => {
   };
 
   return (
-    <div className="min-h-screen bg-[#edf1f5] text-slate-800 flex flex-col">
+    <div className="min-h-screen clinic-gradient-bg text-slate-800 flex flex-col relative overflow-hidden">
+      {/* Decorative ambient background glows */}
+      <div className="absolute top-0 right-1/4 -z-10 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 left-10 -z-10 w-80 h-80 bg-[#0145f2]/10 rounded-full blur-3xl pointer-events-none" />
+
       {/* Top Header Bar */}
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
+      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-blue-100 shadow-xs">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
           <button
             type="button"
             onClick={onNavigateHome}
-            className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#0145f2] hover:bg-blue-50 transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#0145f2] hover:bg-blue-50 transition-all cursor-pointer active:scale-95"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to Home</span>
           </button>
 
           <div className="flex items-center gap-3">
-            <span className="hidden sm:inline-block text-xs font-medium text-slate-500">
-              Dr. Soujanya's Mother and Mind Care
+            <span className="hidden sm:inline-block text-xs font-semibold text-blue-950">
+              {clinicData.clinicName}
             </span>
             <button
               type="button"
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-medium text-slate-700 hover:bg-slate-100 transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
               title="Print document"
             >
               <Printer className="w-3.5 h-3.5 text-slate-500" />
-              <span className="hidden sm:inline">Print</span>
+              <span className="hidden sm:inline">Print Document</span>
             </button>
           </div>
         </div>
       </header>
 
       {/* Main Content Container */}
-      <main className="flex-1 max-w-4xl mx-auto w-full px-4 sm:px-6 py-10 sm:py-14">
+      <main className="flex-1 max-w-4xl mx-auto w-full px-4 sm:px-6 py-10 sm:py-14 relative z-10">
         {/* Document Header Card */}
-        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm mb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-[#0145f2] text-xs font-semibold uppercase tracking-wider mb-4 border border-blue-200">
+        <div className="bg-white/95 backdrop-blur-md rounded-3xl p-6 sm:p-10 border border-blue-100 shadow-xl mb-8 relative overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#0145f2] via-blue-500 to-amber-400" />
+
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-[#0145f2] text-xs font-bold uppercase tracking-wider mb-4 border border-blue-200 shadow-2xs">
             <FileCheck className="w-3.5 h-3.5" />
             <span>Clinical Terms & Policies</span>
           </div>
@@ -56,26 +62,26 @@ export const TermsOfService = ({ onNavigateHome }) => {
             Terms of Service
           </h1>
 
-          <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl">
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl font-normal">
             Please read these Terms of Service carefully before utilizing our consultation booking features or visiting <strong>{clinicData.clinicName}</strong>. By accessing our website or booking an appointment, you agree to comply with these terms.
           </p>
 
-          <div className="mt-6 pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500">
+          <div className="mt-6 pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500 font-medium">
             <span>Effective Date: November 2026</span>
             <span>Jurisdiction: Hyderabad, Telangana, India</span>
           </div>
         </div>
 
         {/* Emergency Alert Box */}
-        <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-8 flex items-start gap-3 text-amber-900 text-xs sm:text-sm">
+        <div className="bg-amber-50/90 border border-amber-200/90 rounded-3xl p-5 sm:p-6 mb-8 flex items-start gap-4 text-amber-950 text-xs sm:text-sm shadow-sm backdrop-blur-xs">
           <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-          <div>
-            <strong className="font-bold">Medical Emergency Notice:</strong> This website and our online consultation request form are designed for scheduled outpatient appointments. For immediate medical emergencies, active labor, acute chest pain, or psychiatric crisis situations, please visit your nearest hospital emergency department or dial emergency services immediately.
+          <div className="leading-relaxed font-medium">
+            <strong className="font-bold text-amber-950">Medical Emergency Notice:</strong> This website and our online consultation request form are designed for scheduled outpatient appointments. For immediate medical emergencies, active labor, acute chest pain, or psychiatric crisis situations, please visit your nearest hospital emergency department or dial emergency services immediately.
           </div>
         </div>
 
         {/* Terms Body */}
-        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm space-y-8 text-sm sm:text-base text-slate-700 leading-relaxed">
+        <div className="bg-white/95 backdrop-blur-md rounded-3xl p-6 sm:p-10 border border-blue-100 shadow-xl space-y-8 text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
           
           {/* Section 1 */}
           <section className="space-y-3">

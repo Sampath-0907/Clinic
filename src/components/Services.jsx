@@ -32,30 +32,35 @@ export const Services = () => {
   const infiniteServices = [...filteredServices, ...filteredServices, ...filteredServices];
 
   return (
-    <section id="services" className="py-20 clinic-gradient-bg overflow-hidden">
-      <div className="clinic-container">
+    <section id="services" className="py-20 lg:py-28 clinic-gradient-bg overflow-hidden relative">
+      {/* Decorative ambient background accents */}
+      <div className="absolute top-1/4 -right-24 w-96 h-96 bg-blue-300/15 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-1/4 -left-24 w-96 h-96 bg-rose-300/15 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute inset-0 bg-grid-subtle opacity-30 pointer-events-none -z-10" />
+
+      <div className="clinic-container relative z-10">
 
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 text-[#0145f2] text-xs font-semibold uppercase tracking-wider mb-4 border border-blue-200 shadow-2xs">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 text-[#0145f2] text-xs font-bold uppercase tracking-wider mb-4 border border-blue-200 shadow-2xs">
             <Sparkles className="w-3.5 h-3.5 text-[#0145f2]" />
             <span>Comprehensive Medical Services</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-4">
             Integrated Mother & Mind Care
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
             Personalized, ethical, and compassionate outpatient clinical services spanning women's health, obstetrics, and psychiatric care.
           </p>
 
           {/* Department Quick Filter Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2.5 mt-8">
+          <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
             <button
               type="button"
               onClick={() => setActiveFilter('all')}
-              className={`px-4.5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeFilter === 'all'
-                ? 'bg-[#0145f2] text-white shadow-md shadow-blue-600/20'
-                : 'bg-white text-slate-600 hover:text-slate-900 hover:bg-blue-50 border border-slate-200/80'
+              className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeFilter === 'all'
+                ? 'bg-gradient-to-r from-[#0145f2] to-[#1e60ff] text-white shadow-lg shadow-blue-600/25 scale-105'
+                : 'bg-white/90 text-slate-600 hover:text-slate-900 hover:bg-white border border-slate-200/90 shadow-2xs'
                 }`}
             >
               All Services ({services.length})
@@ -63,23 +68,23 @@ export const Services = () => {
             <button
               type="button"
               onClick={() => setActiveFilter('gynaecology')}
-              className={`inline-flex items-center gap-1.5 px-4.5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeFilter === 'gynaecology'
-                ? 'bg-rose-700 text-white shadow-md'
-                : 'bg-white text-rose-800 hover:bg-rose-50 border border-rose-200/80'
+              className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeFilter === 'gynaecology'
+                ? 'bg-gradient-to-r from-rose-600 to-rose-700 text-white shadow-lg shadow-rose-600/25 scale-105'
+                : 'bg-white/90 text-rose-800 hover:bg-rose-50/80 border border-rose-200/80 shadow-2xs'
                 }`}
             >
-              <HeartPulse className="w-3.5 h-3.5" />
+              <HeartPulse className="w-4 h-4 text-rose-300" />
               <span>Gynaecology & Obstetrics (Dr. Soujanya)</span>
             </button>
             <button
               type="button"
               onClick={() => setActiveFilter('psychiatry')}
-              className={`inline-flex items-center gap-1.5 px-4.5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeFilter === 'psychiatry'
-                ? 'bg-[#0145f2] text-white shadow-md shadow-blue-600/20'
-                : 'bg-white text-[#0145f2] hover:bg-blue-50 border border-blue-200/80'
+              className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeFilter === 'psychiatry'
+                ? 'bg-gradient-to-r from-[#0145f2] to-[#1e60ff] text-white shadow-lg shadow-blue-600/25 scale-105'
+                : 'bg-white/90 text-[#0145f2] hover:bg-blue-50/80 border border-blue-200/80 shadow-2xs'
                 }`}
             >
-              <Brain className="w-3.5 h-3.5" />
+              <Brain className="w-4 h-4 text-blue-200" />
               <span>Psychiatry & Mind Care (Dr. Vivaswan)</span>
             </button>
           </div>
@@ -156,6 +161,22 @@ export const Services = () => {
                             ))}
                           </div>
                         )}
+                      </div>
+
+                      {/* Card Action Link */}
+                      <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
+                        <span className="text-[11px] font-semibold text-slate-500">
+                          {isGynae ? "Dr. Soujanya Banka" : "Dr. Vivaswan Boorla"}
+                        </span>
+                        <a
+                          href="#appointment"
+                          className={`inline-flex items-center gap-1 text-xs font-bold transition-all group-hover:translate-x-0.5 ${
+                            isGynae ? 'text-rose-600 hover:text-rose-700' : 'text-[#0145f2] hover:text-[#0031b8]'
+                          }`}
+                        >
+                          <span>Request Slot</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </a>
                       </div>
                     </div>
                   );

@@ -132,10 +132,10 @@ export const Navbar = () => {
                   <a
                     key={link.href}
                     href={link.href}
-                    className={`relative whitespace-nowrap px-3.5 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
+                    className={`relative whitespace-nowrap px-4 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
                       isActive
-                        ? 'bg-white text-[#0145f2] shadow-xs font-bold'
-                        : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                        ? 'bg-gradient-to-r from-[#0145f2] to-[#1e60ff] text-white shadow-sm font-bold'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
                     }`}
                   >
                     {link.label}
@@ -156,13 +156,14 @@ export const Navbar = () => {
               </a>
             </div>
 
-            {/* Mobile Menu Trigger */}
+            {/* Mobile Menu Trigger & Fast Appointment Pop-up */}
             <div className="flex xl:hidden items-center gap-2 shrink-0">
               <button
                 type="button"
                 onClick={() => setAppointmentModalOpen(true)}
-                className="inline-flex items-center justify-center p-2 rounded-xl bg-blue-50 text-[#0145f2] border border-blue-200 text-xs font-bold shrink-0 hover:bg-blue-100 transition-colors active:scale-95"
-                aria-label="Open Appointment Form Pop-up"
+                className="inline-flex items-center justify-center p-2 rounded-xl bg-blue-50 text-[#0145f2] border border-blue-200 text-xs font-bold shrink-0 hover:bg-blue-100 transition-colors active:scale-95 cursor-pointer"
+                aria-label="Book an Appointment"
+                title="Book an Appointment"
               >
                 <Calendar className="w-4 h-4 text-[#0145f2]" />
               </button>
@@ -225,7 +226,7 @@ export const Navbar = () => {
                   setMobileMenuOpen(false);
                   setAppointmentModalOpen(true);
                 }}
-                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-bold text-white bg-linear-to-r from-[#0145f2] to-[#1e60ff] shadow-md transition-all active:scale-98"
+                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-bold text-white bg-linear-to-r from-[#0145f2] to-[#1e60ff] shadow-md transition-all active:scale-98 cursor-pointer"
               >
                 <Calendar className="w-4 h-4 text-blue-200" />
                 <span>Book an Appointment</span>

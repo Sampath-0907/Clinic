@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { X, Calendar, Clock, User, Phone, Mail, FileText, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
+import { X, Calendar, Clock, User, Phone, Mail, FileText, CheckCircle2, AlertCircle, Loader2, ArrowRight } from 'lucide-react';
 import { clinicData } from '../data/clinic';
 
 export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialService = '' }) => {
@@ -216,7 +216,7 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
 
   const modalContent = (
     <div 
-      className={`fixed inset-0 z-[9999] flex flex-col justify-end sm:justify-center items-center p-0 sm:p-4 bg-slate-900/60 backdrop-blur-xs transition-opacity duration-300 ${
+      className={`fixed inset-0 z-[9999] flex flex-col justify-end sm:justify-center items-center p-0 sm:p-4 bg-slate-900/60 backdrop-blur-xs overscroll-none transition-opacity duration-300 ${
         isClosing ? 'opacity-0' : 'animate-backdrop-in'
       }`}
       onClick={(e) => {
@@ -224,15 +224,18 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
       }}
     >
       <div 
-        className={`w-full max-w-lg max-h-[90dvh] sm:max-h-[85vh] h-auto bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 ease-out border-t sm:border border-blue-100 ${
+        className={`w-full max-w-lg h-[90vh] sm:h-auto max-h-[92dvh] sm:max-h-[85vh] bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col min-h-0 overflow-hidden transition-all duration-300 ease-out border-t sm:border border-blue-100 ${
           isClosing ? 'translate-y-8 sm:scale-95 opacity-0' : 'animate-modal-center'
         }`}
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
       >
+        {/* Mobile Pull Handle */}
+        <div className="w-12 h-1 bg-slate-300 rounded-full mx-auto mt-2 sm:hidden shrink-0" />
+
         {/* Header - Sticky at the top */}
-        <div className="sticky top-0 z-20 shrink-0 flex items-center justify-between px-4 sm:px-6 py-3.5 border-b border-slate-100 bg-linear-to-r from-blue-50/90 via-white to-blue-50/50 backdrop-blur-md">
+        <div className="shrink-0 flex items-center justify-between px-4 sm:px-6 py-3.5 border-b border-slate-100 bg-linear-to-r from-blue-50/90 via-white to-blue-50/50 backdrop-blur-md">
           <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-xl bg-[#0145f2] text-white flex items-center justify-center shadow-xs shrink-0">
               <Calendar className="w-4 h-4 text-white" />
@@ -249,16 +252,16 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
           <button
             type="button"
             onClick={handleSmoothClose}
-            className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-slate-500 hover:text-slate-900 bg-slate-100/80 hover:bg-slate-200/80 active:scale-95 transition-all cursor-pointer font-medium text-xs"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 active:scale-95 transition-all cursor-pointer font-bold text-xs"
             aria-label="Close dialog"
           >
-            <span className="hidden sm:inline">Close</span>
-            <X className="w-4 h-4" />
+            <span>Close</span>
+            <X className="w-4 h-4 text-slate-700" />
           </button>
         </div>
 
         {/* Scrollable Modal Body */}
-        <div className="p-4 sm:p-6 overflow-y-auto overscroll-contain flex-1 space-y-3.5 text-xs">
+        <div className="p-4 sm:p-6 overflow-y-auto overscroll-contain min-h-0 flex-1 space-y-3.5 text-xs">
           {requestSubmitted && submissionData ? (
             <div className="text-center py-4 animate-fadeIn">
               <div className="w-12 h-12 rounded-full bg-blue-100 text-[#0145f2] flex items-center justify-center mx-auto mb-3">
@@ -453,12 +456,12 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
                 {errors.reason && <p className="text-[11px] text-red-600 mt-0.5">{errors.reason}</p>}
               </div>
 
-              {/* Submit */}
-              <div className="pt-1">
+              {/* Submit & Cancel Buttons */}
+              <div className="pt-2 flex flex-col sm:flex-row items-center gap-2">
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold text-white bg-linear-to-r from-[#0145f2] to-[#1e60ff] hover:from-[#0031b8] hover:to-[#0145f2] shadow-sm hover:shadow transition-all active:scale-98 disabled:opacity-70"
+                  className="w-full sm:flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold text-white bg-linear-to-r from-[#0145f2] to-[#1e60ff] hover:from-[#0031b8] hover:to-[#0145f2] shadow-sm hover:shadow transition-all active:scale-98 disabled:opacity-70 cursor-pointer"
                 >
                   {isSubmitting ? (
                     <>
@@ -472,6 +475,25 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
                     </>
                   )}
                 </button>
+                <button
+                  type="button"
+                  onClick={handleSmoothClose}
+                  className="w-full sm:w-auto px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors cursor-pointer text-center"
+                >
+                  Cancel
+                </button>
+              </div>
+
+              {/* In-page direct booking link fallback */}
+              <div className="text-center pt-1.5 pb-1">
+                <a
+                  href="#appointment"
+                  onClick={handleSmoothClose}
+                  className="text-[11px] text-[#0145f2] hover:underline font-semibold inline-flex items-center gap-1 cursor-pointer"
+                >
+                  <span>Or book directly on the website appointment form</span>
+                  <ArrowRight className="w-3 h-3" />
+                </a>
               </div>
             </form>
           )}

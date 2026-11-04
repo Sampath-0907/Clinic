@@ -50,15 +50,41 @@
 
 /* Soft glowing electric blue & canvas cloud gradients */
 .clinic-gradient-bg {
-  background: radial-gradient(circle at 15% 15%, rgba(1, 69, 242, 0.08) 0%, transparent 45%),
-              radial-gradient(circle at 85% 85%, rgba(1, 69, 242, 0.04) 0%, transparent 50%),
-              #edf1f5;
+  background: 
+    radial-gradient(circle at 12% 18%, rgba(1, 69, 242, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 88% 82%, rgba(14, 165, 233, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(244, 63, 94, 0.02) 0%, transparent 60%),
+    #edf1f5;
 }
 
 .clinic-glass {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Modern Card with frosted glass elevation */
+.glass-card-elevated {
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 10px 30px -10px rgba(6, 18, 52, 0.06), 0 4px 6px -2px rgba(6, 18, 52, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-elevated:hover {
+  border-color: rgba(1, 69, 242, 0.3);
+  box-shadow: 0 20px 40px -15px rgba(1, 69, 242, 0.12), 0 8px 12px -4px rgba(6, 18, 52, 0.04);
+  transform: translateY(-2px);
+}
+
+/* Subtle dot grid pattern */
+.bg-grid-subtle {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(1, 69, 242, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(1, 69, 242, 0.04) 1px, transparent 1px);
 }
 
 /* Expansive, responsive page container utilizing wide screens with balanced padding */

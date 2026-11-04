@@ -13,8 +13,12 @@ export const Footer = ({ onNavigate }) => {
   };
 
   return (
-    <footer className="bg-[#061234] text-slate-300 pt-16 pb-12 border-t border-blue-900/40">
-      <div className="clinic-container">
+    <footer className="bg-[#03091e] text-slate-300 pt-16 pb-12 border-t border-blue-950 relative overflow-hidden">
+      {/* Decorative subtle ambient glow in footer */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#0145f2]/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="clinic-container relative z-10">
         
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-blue-900/60">

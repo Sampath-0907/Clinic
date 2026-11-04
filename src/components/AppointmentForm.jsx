@@ -209,25 +209,30 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
   const whatsappRedirectUrl = submissionData ? getWhatsAppBookingUrl(submissionData) : null;
 
   return (
-    <section id="appointment" className="py-20 clinic-gradient-bg">
-      <div className="max-w-5xl lg:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="appointment" className="py-20 lg:py-28 clinic-gradient-bg relative overflow-hidden">
+      {/* Background ambient accents */}
+      <div className="absolute top-1/3 -right-32 w-96 h-96 bg-blue-300/20 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-10 -left-32 w-80 h-80 bg-rose-200/20 rounded-full blur-3xl pointer-events-none -z-10" />
+
+      <div className="clinic-container">
 
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-blue-100 text-[#0145f2] text-xs font-semibold uppercase tracking-wider mb-4 border border-blue-200">
-            {appointment.badge}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-100 text-[#0145f2] text-xs font-bold uppercase tracking-wider mb-4 border border-blue-200 shadow-2xs">
+            <Calendar className="w-3.5 h-3.5 text-[#0145f2]" />
+            <span>{appointment.badge}</span>
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-4">
             {appointment.title}
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
             {appointment.subtitle}
           </p>
         </div>
 
         {/* Success State / Request Received Confirmation Card */}
         {requestSubmitted && submissionData ? (
-          <div className="bg-white rounded-3xl p-8 sm:p-12 border border-blue-200 shadow-xl text-center animate-fadeIn">
+          <div className="max-w-2xl mx-auto bg-white rounded-3xl p-8 sm:p-12 border border-blue-200 shadow-2xl text-center animate-fadeIn">
             <div className="w-16 h-16 rounded-full bg-blue-100 text-[#0145f2] flex items-center justify-center mx-auto mb-6 shadow-xs">
               <CheckCircle2 className="w-10 h-10" />
             </div>
@@ -284,210 +289,268 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
             </button>
           </div>
         ) : (
-          /* Main Appointment Request Form */
-          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-blue-100 shadow-xl">
+          /* Main 2-Column Appointment Experience */
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch max-w-6xl mx-auto">
 
-            {/* Top Form Disclaimer Alert */}
-            <div className="flex items-start gap-3 p-4 rounded-2xl bg-blue-50/70 border border-blue-200/60 mb-8 text-xs text-slate-700">
-              <AlertCircle className="w-5 h-5 text-[#0145f2] shrink-0 mt-0.5" />
-              <p className="leading-relaxed">
-                {appointment.disclaimerNotice}
-              </p>
+            {/* Left Column: Visual Clinic Card & Information Highlights */}
+            <div className="lg:col-span-5 flex flex-col justify-between bg-white rounded-3xl p-6 sm:p-8 border border-blue-100 shadow-xl overflow-hidden relative">
+              <div className="space-y-6">
+
+                {/* Visual Image */}
+                <div className="relative rounded-2xl overflow-hidden aspect-16/10 shadow-sm border border-slate-100 group">
+                  <img
+                    src="/clinic-consultation.jpg"
+                    alt="Consultation Space"
+                    className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent flex items-end p-4">
+                    <div>
+                      <p className="text-white text-xs font-bold tracking-wide">
+                        In-Person & Ethical Consultations
+                      </p>
+                      <p className="text-blue-200 text-[11px]">
+                        Pragati Nagar, Hyderabad
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Fast Verification Points */}
+                <div className="space-y-3.5">
+                  <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-blue-50/70 border border-blue-100">
+                    <Clock className="w-4 h-4 text-[#0145f2] shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="text-xs font-bold text-slate-900">OPD Consultation Hours</h4>
+                      <p className="text-[11px] text-slate-600 mt-0.5">Monday to Saturday: 9:00 AM - 9:00 PM</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-emerald-50/70 border border-emerald-100">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="text-xs font-bold text-slate-900">Seamless WhatsApp Sync</h4>
+                      <p className="text-[11px] text-slate-600 mt-0.5">Instant booking message pre-fills directly on your phone.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Bottom Reassurance Banner */}
+              <div className="mt-6 pt-5 border-t border-slate-100 text-slate-500 text-xs leading-relaxed">
+                <p>
+                  "We believe good healthcare begins with patient listening and personalized attention."
+                </p>
+              </div>
             </div>
 
-            {errors.form && (
-              <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm mb-6 flex items-center gap-2">
-                <AlertCircle className="w-5 h-5 shrink-0" />
-                <span>{errors.form}</span>
-              </div>
-            )}
+            {/* Right Column: Interactive Booking Form */}
+            <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 border border-blue-100 shadow-xl flex flex-col justify-between">
 
-            <form onSubmit={handleSubmit} noValidate className="space-y-6">
-
-              {/* Row 1: Name & Phone */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                    Full Name <span className="text-red-500">*</span>
-                  </label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                      <User className="w-4 h-4" />
-                    </div>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Your Name"
-                      className={`w-full pl-10 pr-4 py-3 rounded-xl border text-sm text-slate-800 placeholder-slate-400 bg-slate-50/50 focus:bg-white focus:outline-hidden transition-colors ${errors.name
-                        ? 'border-red-300 focus:border-red-500 focus:ring-1 focus:ring-red-500'
-                        : 'border-slate-200 focus:border-[#0145f2] focus:ring-1 focus:ring-[#0145f2]'
-                        }`}
-                    />
-                  </div>
-                  {errors.name && <p className="text-xs text-red-600 mt-1">{errors.name}</p>}
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                    Phone Number <span className="text-red-500">*</span>
-                  </label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                      <Phone className="w-4 h-4" />
-                    </div>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="+91 1234567890"
-                      className={`w-full pl-10 pr-4 py-3 rounded-xl border text-sm text-slate-800 placeholder-slate-400 bg-slate-50/50 focus:bg-white focus:outline-hidden transition-colors ${errors.phone
-                        ? 'border-red-300 focus:border-red-500 focus:ring-1 focus:ring-red-500'
-                        : 'border-slate-200 focus:border-[#0145f2] focus:ring-1 focus:ring-[#0145f2]'
-                        }`}
-                    />
-                  </div>
-                  {errors.phone && <p className="text-xs text-red-600 mt-1">{errors.phone}</p>}
-                </div>
-              </div>
-
-              {/* Row 2: Email & Preferred Doctor */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="email" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                    Email Address <span className="text-red-500">*</span>
-                  </label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                      <Mail className="w-4 h-4" />
-                    </div>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="yourname@gmail.com"
-                      className={`w-full pl-10 pr-4 py-3 rounded-xl border text-sm text-slate-800 placeholder-slate-400 bg-slate-50/50 focus:bg-white focus:outline-hidden transition-colors ${errors.email
-                        ? 'border-red-300 focus:border-red-500 focus:ring-1 focus:ring-red-500'
-                        : 'border-slate-200 focus:border-[#0145f2] focus:ring-1 focus:ring-[#0145f2]'
-                        }`}
-                    />
-                  </div>
-                  {errors.email && <p className="text-xs text-red-600 mt-1">{errors.email}</p>}
-                </div>
-
-                <div>
-                  <label htmlFor="doctor" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                    Preferred Doctor
-                  </label>
-                  <select
-                    id="doctor"
-                    name="doctor"
-                    value={formData.doctor}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 bg-slate-50/50 focus:bg-white focus:border-[#0145f2] focus:outline-hidden focus:ring-1 focus:ring-[#0145f2] transition-colors"
-                  >
-                    <option value="">Any Available Doctor / General Consultation</option>
-                    {doctors.map((doc) => (
-                      <option key={doc.id} value={doc.name}>
-                        {doc.name} - {doc.role}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              {/* Row 3: Preferred Date & Time Slot */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="date" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                    Preferred Date <span className="text-red-500">*</span>
-                  </label>
-                  <div className="relative">
-                    <input
-                      type="date"
-                      id="date"
-                      name="date"
-                      min={todayString}
-                      value={formData.date}
-                      onChange={handleChange}
-                      className={`w-full px-4 py-3 rounded-xl border text-sm text-slate-800 bg-slate-50/50 focus:bg-white focus:outline-hidden transition-colors ${errors.date
-                        ? 'border-red-300 focus:border-red-500 focus:ring-1 focus:ring-red-500'
-                        : 'border-slate-200 focus:border-[#0145f2] focus:ring-1 focus:ring-[#0145f2]'
-                        }`}
-                    />
-                  </div>
-                  {errors.date && <p className="text-xs text-red-600 mt-1">{errors.date}</p>}
-                </div>
-
-                <div>
-                  <label htmlFor="timeSlot" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                    Preferred Time <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    id="timeSlot"
-                    name="timeSlot"
-                    value={formData.timeSlot}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 bg-slate-50/50 focus:bg-white focus:border-[#0145f2] focus:outline-hidden focus:ring-1 focus:ring-[#0145f2] transition-colors"
-                  >
-                    {appointment.timeSlots.map((slot, idx) => (
-                      <option key={idx} value={slot}>
-                        {slot}
-                      </option>
-                    ))}
-                  </select>
-                  {errors.timeSlot && <p className="text-xs text-red-600 mt-1">{errors.timeSlot}</p>}
-                </div>
-              </div>
-
-              {/* Row 4: Reason for Visit */}
               <div>
-                <label htmlFor="reason" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                  Reason for Consultation / Symptoms <span className="text-red-500">*</span>
-                </label>
-                <textarea
-                  id="reason"
-                  name="reason"
-                  rows={3}
-                  value={formData.reason}
-                  onChange={handleChange}
-                  placeholder="Please describe symptoms, purpose of visit, or questions you would like addressed..."
-                  className={`w-full p-4 rounded-xl border text-sm text-slate-800 placeholder-slate-400 bg-slate-50/50 focus:bg-white focus:outline-hidden transition-colors resize-none ${errors.reason
-                    ? 'border-red-300 focus:border-red-500 focus:ring-1 focus:ring-red-500'
-                    : 'border-slate-200 focus:border-[#0145f2] focus:ring-1 focus:ring-[#0145f2]'
-                    }`}
-                />
-                {errors.reason && <p className="text-xs text-red-600 mt-1">{errors.reason}</p>}
-              </div>
+                {/* Top Form Disclaimer Alert */}
+                <div className="flex items-start gap-3 p-4 rounded-2xl bg-blue-50/80 border border-blue-200/60 mb-6 text-xs text-slate-700">
+                  <AlertCircle className="w-5 h-5 text-[#0145f2] shrink-0 mt-0.5" />
+                  <p className="leading-relaxed">
+                    {appointment.disclaimerNotice}
+                  </p>
+                </div>
 
-              {/* Submit Button */}
-              <div className="pt-2">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-[#0145f2] to-[#1e60ff] hover:from-[#0031b8] hover:to-[#0145f2] shadow-lg shadow-blue-600/25 hover:shadow-xl transition-all duration-200 active:scale-98 disabled:opacity-70 disabled:cursor-not-allowed focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#0145f2]"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="w-5 h-5 animate-spin" />
-                      <span>Sending Request...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Calendar className="w-5 h-5 text-blue-200" />
-                      <span>Request Appointment</span>
-                    </>
-                  )}
-                </button>
-              </div>
+                {errors.form && (
+                  <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm mb-6 flex items-center gap-2">
+                    <AlertCircle className="w-5 h-5 shrink-0" />
+                    <span>{errors.form}</span>
+                  </div>
+                )}
 
-            </form>
+                <form onSubmit={handleSubmit} noValidate className="space-y-6">
+
+                  {/* Row 1: Name & Phone */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                        Full Name <span className="text-red-500">*</span>
+                      </label>
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                          <User className="w-4 h-4" />
+                        </div>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          placeholder="Your Name"
+                          className={`w-full pl-10 pr-4 py-3 rounded-xl border text-sm text-slate-800 placeholder-slate-400 bg-slate-50/50 focus:bg-white focus:outline-hidden transition-colors ${errors.name
+                            ? 'border-red-300 focus:border-red-500 focus:ring-1 focus:ring-red-500'
+                            : 'border-slate-200 focus:border-[#0145f2] focus:ring-1 focus:ring-[#0145f2]'
+                            }`}
+                        />
+                      </div>
+                      {errors.name && <p className="text-xs text-red-600 mt-1">{errors.name}</p>}
+                    </div>
+
+                    <div>
+                      <label htmlFor="phone" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                        Phone Number <span className="text-red-500">*</span>
+                      </label>
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                          <Phone className="w-4 h-4" />
+                        </div>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          placeholder="+91 1234567890"
+                          className={`w-full pl-10 pr-4 py-3 rounded-xl border text-sm text-slate-800 placeholder-slate-400 bg-slate-50/50 focus:bg-white focus:outline-hidden transition-colors ${errors.phone
+                            ? 'border-red-300 focus:border-red-500 focus:ring-1 focus:ring-red-500'
+                            : 'border-slate-200 focus:border-[#0145f2] focus:ring-1 focus:ring-[#0145f2]'
+                            }`}
+                        />
+                      </div>
+                      {errors.phone && <p className="text-xs text-red-600 mt-1">{errors.phone}</p>}
+                    </div>
+                  </div>
+
+                  {/* Row 2: Email & Preferred Doctor */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="email" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                        Email Address <span className="text-red-500">*</span>
+                      </label>
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                          <Mail className="w-4 h-4" />
+                        </div>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="yourname@gmail.com"
+                          className={`w-full pl-10 pr-4 py-3 rounded-xl border text-sm text-slate-800 placeholder-slate-400 bg-slate-50/50 focus:bg-white focus:outline-hidden transition-colors ${errors.email
+                            ? 'border-red-300 focus:border-red-500 focus:ring-1 focus:ring-red-500'
+                            : 'border-slate-200 focus:border-[#0145f2] focus:ring-1 focus:ring-[#0145f2]'
+                            }`}
+                        />
+                      </div>
+                      {errors.email && <p className="text-xs text-red-600 mt-1">{errors.email}</p>}
+                    </div>
+
+                    <div>
+                      <label htmlFor="doctor" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                        Preferred Doctor
+                      </label>
+                      <select
+                        id="doctor"
+                        name="doctor"
+                        value={formData.doctor}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 bg-slate-50/50 focus:bg-white focus:border-[#0145f2] focus:outline-hidden focus:ring-1 focus:ring-[#0145f2] transition-colors"
+                      >
+                        <option value="">Any Available Doctor / General Consultation</option>
+                        {doctors.map((doc) => (
+                          <option key={doc.id} value={doc.name}>
+                            {doc.name} - {doc.role}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
+                  {/* Row 3: Preferred Date & Time Slot */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="date" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                        Preferred Date <span className="text-red-500">*</span>
+                      </label>
+                      <div className="relative">
+                        <input
+                          type="date"
+                          id="date"
+                          name="date"
+                          min={todayString}
+                          value={formData.date}
+                          onChange={handleChange}
+                          className={`w-full px-4 py-3 rounded-xl border text-sm text-slate-800 bg-slate-50/50 focus:bg-white focus:outline-hidden transition-colors ${errors.date
+                            ? 'border-red-300 focus:border-red-500 focus:ring-1 focus:ring-red-500'
+                            : 'border-slate-200 focus:border-[#0145f2] focus:ring-1 focus:ring-[#0145f2]'
+                            }`}
+                        />
+                      </div>
+                      {errors.date && <p className="text-xs text-red-600 mt-1">{errors.date}</p>}
+                    </div>
+
+                    <div>
+                      <label htmlFor="timeSlot" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                        Preferred Time <span className="text-red-500">*</span>
+                      </label>
+                      <select
+                        id="timeSlot"
+                        name="timeSlot"
+                        value={formData.timeSlot}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 bg-slate-50/50 focus:bg-white focus:border-[#0145f2] focus:outline-hidden focus:ring-1 focus:ring-[#0145f2] transition-colors"
+                      >
+                        {appointment.timeSlots.map((slot, idx) => (
+                          <option key={idx} value={slot}>
+                            {slot}
+                          </option>
+                        ))}
+                      </select>
+                      {errors.timeSlot && <p className="text-xs text-red-600 mt-1">{errors.timeSlot}</p>}
+                    </div>
+                  </div>
+
+                  {/* Row 4: Reason for Visit */}
+                  <div>
+                    <label htmlFor="reason" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                      Reason for Consultation / Symptoms <span className="text-red-500">*</span>
+                    </label>
+                    <textarea
+                      id="reason"
+                      name="reason"
+                      rows={3}
+                      value={formData.reason}
+                      onChange={handleChange}
+                      placeholder="Please describe symptoms, purpose of visit, or questions you would like addressed..."
+                      className={`w-full p-4 rounded-xl border text-sm text-slate-800 placeholder-slate-400 bg-slate-50/50 focus:bg-white focus:outline-hidden transition-colors resize-none ${errors.reason
+                        ? 'border-red-300 focus:border-red-500 focus:ring-1 focus:ring-red-500'
+                        : 'border-slate-200 focus:border-[#0145f2] focus:ring-1 focus:ring-[#0145f2]'
+                        }`}
+                    />
+                    {errors.reason && <p className="text-xs text-red-600 mt-1">{errors.reason}</p>}
+                  </div>
+
+                  {/* Submit Button */}
+                  <div className="pt-2">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-[#0145f2] to-[#1e60ff] hover:from-[#0031b8] hover:to-[#0145f2] shadow-lg shadow-blue-600/25 hover:shadow-xl transition-all duration-200 active:scale-98 disabled:opacity-70 disabled:cursor-not-allowed focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#0145f2] cursor-pointer"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-5 h-5 animate-spin" />
+                          <span>Sending Request...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Calendar className="w-5 h-5 text-blue-200" />
+                          <span>Request Appointment</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+
+                </form>
+              </div>
+            </div>
           </div>
         )}
 

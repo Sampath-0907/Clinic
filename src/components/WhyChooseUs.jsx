@@ -49,11 +49,14 @@ export const WhyChooseUs = () => {
                 {infiniteItems.map((item, idx) => (
                   <div
                     key={`${item.title}-${idx}`}
-                    className="group relative flex flex-col justify-between w-[310px] sm:w-[350px] min-h-[280px] shrink-0 bg-white rounded-2xl p-6 sm:p-7 border border-blue-100/90 shadow-xs hover:shadow-xl hover:border-blue-300 transition-all duration-300 hover:-translate-y-1.5"
+                    className="group relative flex flex-col justify-between w-[310px] sm:w-[350px] min-h-[290px] shrink-0 bg-white rounded-3xl p-6 sm:p-7 border border-blue-100/90 shadow-md hover:shadow-2xl hover:border-blue-300 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden"
                   >
+                    {/* Top ambient hover accent */}
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0145f2] to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+
                     <div>
                       {/* Icon */}
-                      <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#0145f2] flex items-center justify-center mb-5 group-hover:bg-[#0145f2] group-hover:text-white transition-colors duration-300 shadow-2xs">
+                      <div className="w-13 h-13 rounded-2xl bg-blue-50 text-[#0145f2] flex items-center justify-center mb-5 group-hover:bg-[#0145f2] group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-md group-hover:scale-105">
                         <DynamicIcon name={item.iconName} className="w-6 h-6" />
                       </div>
 
@@ -63,15 +66,18 @@ export const WhyChooseUs = () => {
                       </h3>
 
                       {/* Description */}
-                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-3">
+                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-3 font-normal">
                         {item.description}
                       </p>
                     </div>
 
                     {/* Trust Pillar Highlight */}
-                    <div className="pt-4 mt-4 border-t border-slate-50 flex items-center gap-2 text-xs font-semibold text-[#0145f2]">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#0145f2]"></span>
-                      <span>Verified Practice Standard</span>
+                    <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-[#0145f2]">
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span className="text-slate-700">Verified Practice Standard</span>
+                      </div>
+                      <span className="text-blue-300 group-hover:text-[#0145f2] transition-colors">✦</span>
                     </div>
                   </div>
                 ))}
