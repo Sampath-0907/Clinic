@@ -215,7 +215,7 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
 
   return (
     <div 
-      className={`fixed inset-0 z-[60] flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-xs transition-opacity duration-300 ${
+      className={`fixed inset-0 z-[60] flex flex-col justify-end sm:justify-center items-center p-0 sm:p-4 bg-slate-900/60 backdrop-blur-xs transition-opacity duration-300 ${
         isClosing ? 'opacity-0' : 'animate-backdrop-in'
       }`}
       onClick={(e) => {
@@ -223,18 +223,18 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
       }}
     >
       <div 
-        className={`w-full max-w-md max-h-[88vh] bg-white rounded-2xl sm:rounded-3xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 ease-out border border-blue-100 ${
-          isClosing ? 'scale-95 opacity-0' : 'animate-modal-center'
+        className={`w-full max-w-lg max-h-[92dvh] sm:max-h-[88vh] bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 ease-out border-t sm:border border-blue-100 ${
+          isClosing ? 'translate-y-8 sm:scale-95 opacity-0' : 'animate-modal-center'
         }`}
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
       >
-        {/* Header */}
-        <div className="flex items-center justify-between px-4 sm:px-5 py-3 border-b border-slate-100 bg-linear-to-r from-blue-50/70 to-white">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-[#0145f2] text-white flex items-center justify-center shadow-xs">
-              <Calendar className="w-4 h-4 text-blue-200" />
+        {/* Header - Sticky at the top */}
+        <div className="sticky top-0 z-20 shrink-0 flex items-center justify-between px-4 sm:px-6 py-3.5 border-b border-slate-100 bg-linear-to-r from-blue-50/90 via-white to-blue-50/50 backdrop-blur-md">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-xl bg-[#0145f2] text-white flex items-center justify-center shadow-xs shrink-0">
+              <Calendar className="w-4 h-4 text-white" />
             </div>
             <div>
               <h3 id="modal-title" className="text-sm sm:text-base font-bold text-slate-900 leading-tight">
@@ -248,15 +248,16 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
           <button
             type="button"
             onClick={handleSmoothClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer"
+            className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-slate-500 hover:text-slate-900 bg-slate-100/80 hover:bg-slate-200/80 active:scale-95 transition-all cursor-pointer font-medium text-xs"
             aria-label="Close dialog"
           >
+            <span className="hidden sm:inline">Close</span>
             <X className="w-4 h-4" />
           </button>
         </div>
 
-        {/* Scrollable Compact Body */}
-        <div className="p-4 sm:p-5 overflow-y-auto flex-1 space-y-3 text-xs">
+        {/* Scrollable Modal Body */}
+        <div className="p-4 sm:p-6 overflow-y-auto overscroll-contain flex-1 space-y-3.5 text-xs">
           {requestSubmitted && submissionData ? (
             <div className="text-center py-4 animate-fadeIn">
               <div className="w-12 h-12 rounded-full bg-blue-100 text-[#0145f2] flex items-center justify-center mx-auto mb-3">
