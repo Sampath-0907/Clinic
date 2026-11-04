@@ -53,10 +53,16 @@ export const Navbar = () => {
       <div className="w-full bg-linear-to-r from-[#061234] via-[#091E5A] to-[#0145f2] text-white text-xs border-b border-blue-950/50">
         <div className="clinic-container flex items-center justify-between gap-4 py-2">
           <div className="flex items-center gap-6">
-            <span className="hidden sm:inline-flex items-center gap-1.5 text-blue-100 font-normal">
+            <a
+              href={clinicData.contact?.googleMapsUrl || "https://maps.app.goo.gl/oxVg4hLZfBcNM1Ln9"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex items-center gap-1.5 text-blue-100 hover:text-white font-normal transition-colors"
+              title="Open Clinic Location on Google Maps"
+            >
               <MapPin className="w-3.5 h-3.5 text-blue-300 shrink-0" />
               <span>{clinicData.location || "Pragati Nagar, Hyderabad"}</span>
-            </span>
+            </a>
             <span className="inline-flex items-center gap-1.5 text-blue-100 font-medium">
               <Clock className="w-3.5 h-3.5 text-blue-300 shrink-0" />
               <span>Mon - Sat: 9:00 AM - 9:00 PM</span>

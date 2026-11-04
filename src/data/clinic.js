@@ -497,7 +497,8 @@ export const clinicData = {
     phone: "+91 63038 18118", // Clinic contact number
     phoneTel: "+916303818118",
     email: "drsoujanyasmotherandmindcare@gmail.com",
-    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Plot+No+264+Kakatiya+Hills+Pragathi+Nagar+Hyderabad+Telangana+500090",
+    googleMapsUrl: "https://maps.app.goo.gl/oxVg4hLZfBcNM1Ln9",
+    mapEmbedUrl: "https://maps.google.com/maps?q=17.5314779,78.394495+(Dr.+Soujanya's+mother+%26+mind+clinic)&t=&z=16&ie=UTF8&iwloc=&output=embed",
     whatsapp: "+91 83175 09180",
     whatsappDisplay: "+91 83175 09180",
     operatingHours: [

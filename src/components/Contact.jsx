@@ -173,8 +173,8 @@ export const Contact = () => {
               {/* Live Interactive Map Frame */}
               <div className="w-full h-64 sm:h-72 bg-slate-100 relative">
                 <iframe
-                  title="Clinic Location Map"
-                  src={`https://maps.google.com/maps?q=${encodeURIComponent(contact.address)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                  title="Clinic Location Map - Dr. Soujanya's Mother and Mind Clinic"
+                  src={contact.mapEmbedUrl || `https://maps.google.com/maps?q=17.5314779,78.394495+(Dr.+Soujanya's+mother+%26+mind+clinic)&t=&z=16&ie=UTF8&iwloc=&output=embed`}
                   className="w-full h-full border-0"
                   loading="lazy"
                   allowFullScreen
